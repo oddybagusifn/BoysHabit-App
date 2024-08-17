@@ -1,0 +1,115 @@
+*{
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    min-height: 100vh;
+}
+
+.navbar{
+    background-color:#1c1c1c;
+}
+
+.contentLayout{
+    background: #f4f4f6;
+}
+
+.imageLogo{
+    width: 30px;
+}
+
+.carousel-inner{
+    height: 700px;
+    /* border: solid green; */
+}
+
+.carousel-item{
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+}
+
+.heroText{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.slideContent{
+    text-align: center;
+}
+
+.heroText .brandName{
+    letter-spacing: 1.25rem;
+    font-size: 60px;
+}
+
+
+.slide img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+
+}
+
+.slideText2{
+    margin-left: 300px;
+    margin-top: 70px;
+}
+
+.slide3{
+    margin-top: 355px;
+}
+
+.slideText3{
+    margin-left: 300px;
+    margin-top: 70px;
+}
+
+.carousel-item img{
+    filter:brightness(80%);
+    top: 0;
+    left: 0;
+
+}
+
+.content{
+    min-height: 100%;
+    background: #f4f4f6;
+}
+
+
+.contentWrapper{
+    /* border: solid red; */
+    height: 100vh;
+}
+
+.sectionTitle{
+    color: #1c1c1c;
+    font-size: 70px;
+    display: flex;
+    justify-content: center;
+}
+
+.topProducts{
+    /* border: solid red; */
+    margin-right: 100px;
+    margin-left: 100px;
+}
+
+.productItems{
+    background-color: #1c1c1c;
+    background-image: url('/img/contour.png');
+}
+
+
+
+
+
+
+
+
+
+
