@@ -62,25 +62,27 @@
                 <div class="bestSellerDash">
                     <h1 class="sectionTitle fw-bold pt-5 pb-5">BEST SELLER</h1>
 
-                    <div class="topProducts pb-5 ">
-                        <div class="productItems container-fluid gap-3 pt-5 ps-5 pe-5 rounded">
-                            <div class="row row-cols-1 row-cols-md-4">
+                    <div class="topProducts">
+                        <div class="productItems pt-3 ps-5 pe-5 rounded">
+                            <div class="row row-cols-1 row-cols-md-4 pb-3 pt-3 ps-2 pe-2">
                                 @foreach ($dataProducts as $data)
-                                <div class="col pb-5">
+                                <div class="col">
                                     <div class="card rounded-0" style="width: 23rem;">
                                         <img src="img/heroImage.jpg" class="card-img-top rounded-0" alt="...">
                                         <div class="card-body">
-                                            <h5 class="card-title fw-semibold">{{$data['product_name']}}</h5>
-                                        </div>
-                                        <ul class="list-group list-group-flush">
+                                            <div class="ratingStar">
 
-                                            <li class="list-group-item fw-bold">IDR {{$data['product_price']}}</li>
-                                            <li class="list-group-item">Size: {{$data['size']}}</li>
-                                            <li class="list-group-item">Stock: {{$data['stock_product']}}</li>
+                                            </div>
+                                            <h5 class="card-title fw-semibold">{{$data['name']}}</h5>
+                                        </div>
+                                        <ul class="list-group list-group-flush border-0">
+                                            <li class="list-group-item fw-bold border-0">IDR 100.000</li>
+                                            <li class="list-group-item border-0">Size: XL</li>
+                                            <li class="list-group-item border-0">Stock: 100</li>
                                         </ul>
                                         <div class="card-body">
-                                            <a href="#" class="card-link btn btn-dark rounded-0 fw-medium" style="background: #1c1c1c">Add to Cart</a>
-                                            <a href="#" class="card-link link-offset-2 link-underline link-underline-opacity-0 text-dark">View More</a>
+                                            <a href="#" class="addCart card-link btn btn-dark rounded-0 fw-medium">Add to Cart</a>
+                                            <a href="#" class="viewMore card-link link-offset-2 link-underline link-underline-opacity-0 text-dark" style="margin-left: 120px">View More</a>
                                         </div>
                                     </div>
                                 </div>

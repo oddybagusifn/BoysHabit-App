@@ -18,27 +18,44 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        // User::factory()->create([
+        //     'name' => 'Test User',
+        //     'email' => 'test@example.com',
+        // ]);
 
         DB::table('products')->insert([
-            'product_name' => "Example",
-            'stock_product' => 100,
-            'product_price' => '250.000',
+            'category_id' => 1,
+            'name' => 'Example',
+            'description' => 'Example',
             'product_image' => "Example.jpg",
-            'description' => "Example",
-            'size' => "Example",
-            'gender' => "Example",
-            'rating' => 5,
         ]);
 
-        DB::table('product_details')->insert([
-            'transaction_id' => 1,
+        DB::table('product_items')->insert([
             'product_id' => 1,
-            'amount' => 1,
-            'total' => 1,
+            'SKU' => 'Example',
+            'qty_in_stock' => 50,
+            'product_image' => "Example",
+            'price' => 100000,
+            'rating' => 5
         ]);
+
+        DB::table('product_categories')->insert([
+            'parent_category_id' => 1,
+            'category_name' => "Example"
+        ]);
+
+        DB::table('promotions')->insert([
+            'name' => 'Example',
+            'description' => 'Example',
+            'discount_rate' => 50,
+            'start_date' => "20 Jun",
+            'end_date' => "20 Jul"
+        ]);
+
+        DB::table('promotion_category')->insert([
+            'category_id' => 1,
+            'promotion_id' => 1
+        ]);
+
     }
 }

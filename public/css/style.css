@@ -3,15 +3,11 @@
 }
 
 body{
-    min-height: 100vh;
+    background: #f4f4f6;
 }
 
 .navbar{
     background-color:#1c1c1c;
-}
-
-.contentLayout{
-    background: #f4f4f6;
 }
 
 .imageLogo{
@@ -99,10 +95,22 @@ body{
     margin-left: 100px;
 }
 
-.productItems{
-    background-color: #1c1c1c;
-    background-image: url('/img/contour.png');
+.card{
+    box-shadow: 0 0 5px rgba(0, 0, 0, .7);
 }
+
+.card-body .addCart {
+    background-color: #1c1c1c;
+    color: #f4f4f6;
+}
+
+.card-body .addCart:hover {
+
+    background-color: #f4f4f6;
+    color: #1c1c1c;
+}
+
+
 
 
 

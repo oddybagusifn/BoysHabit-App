@@ -17,14 +17,10 @@ class ProductFactory extends Factory
     public function definition(): array
     {
         return [
-            'product_name' => "Example",
-            'stock_product' => 100,
-            'product_price' => '250.000',
-            'product_image' => "Example/jpg",
+            'category_id' => 1,
+            'name' => "Example",
             'description' => "Example",
-            'size' => "Example",
-            'gender' => "Example",
-            'rating' => 5,
+            'product_image' => "Example.jpg"
         ];
     }
 }
