@@ -23,6 +23,11 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
+        DB::table('product_categories')->insert([
+            'parent_category_id' => 1,
+            'category_name' => "Example"
+        ]);
+
         DB::table('products')->insert([
             'category_id' => 1,
             'name' => 'Example',
@@ -32,30 +37,24 @@ class DatabaseSeeder extends Seeder
 
         DB::table('product_items')->insert([
             'product_id' => 1,
-            'SKU' => 'Example',
+            'SKU' => "Example",
             'qty_in_stock' => 50,
             'product_image' => "Example",
             'price' => 100000,
             'rating' => 5
         ]);
 
-        DB::table('product_categories')->insert([
-            'parent_category_id' => 1,
-            'category_name' => "Example"
-        ]);
-
         DB::table('promotions')->insert([
-            'name' => 'Example',
-            'description' => 'Example',
+            'name' => "Example",
+            'description' => "Example",
             'discount_rate' => 50,
-            'start_date' => "20 Jun",
-            'end_date' => "20 Jul"
+            'start_date' => "20 Jul",
+            'end_date' => "20 Aug"
         ]);
 
-        DB::table('promotion_category')->insert([
+        DB::table('promotion_categories')->insert([
             'category_id' => 1,
-            'promotion_id' => 1
+            'promotion_id' => 1,
         ]);
-
     }
 }

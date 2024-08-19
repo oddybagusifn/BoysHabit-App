@@ -1,111 +1,159 @@
-
-<x-layout>
-    {{-- Hero Section --}}
-    <div class="heroSection">
-        <div class="carousel">
-            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="img/heroImage.jpg" class="d-block w-100 img-fluid bg-black bg-gradient" style="filter:brightness(90%)" alt="...">
-                        <div class="heroText card-img-overlay">
-                            <div class="slideContent">
-                                <h1 class="brandName fw-bold fst-italic"><span style="color: #f4f4f6">BOYS</span>HABIT</h1>
-                                <h3 class="fw-semibold fst-italic"><span style="color: #f4f4f6">Endless Style,</span> Limitless Choices</h3>
+    <x-layout>
+        {{-- Hero Section --}}
+        <div class="heroSection">
+            <div class="carousel">
+                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="img/heroImage.jpg" class="d-block w-100 img-fluid bg-black bg-gradient" alt="...">
+                            <div class="heroText card-img-overlay">
+                                <div class="slideContent">
+                                    <h1 class="brandName fw-bold fst-italic">BOYSHABIT</h1>
+                                    <h3 class="fw-semibold fst-italic" style="color: #f4f4f6;">Endless Style, Limitless Choices</h3>
+                                </div>
+                            </div>
+                      </div>
+                      <a href="#">
+                        <div class="carousel-item">
+                            <img src="img/kaws.jpg" class="d-block w-100 img-fluid" alt="...">
+                            <div class="slide card-img-overlay">
+                                <img src="img/kawsLogo.jpg" style="width:200px;" alt="">
+                                <div class="slideText2">
+                                    <h3 class="fw-bold" style="color: #f4f4f6">KAWS Edition</h3>
+                                    <p style="color: #f4f4f6">Celebrating the Premiere of Kaws 2024</p>
+                                    <p class="btn btn-light rounded-0 fw-semibold">View More</p>
+                                </div>
                             </div>
                         </div>
+                    </a>
+                    <a href="">
+                        <div class="carousel-item">
+                            <img src="img/onePiece.png" class="d-block w-100 img-fluid" alt="...">
+                            <div class="slide3 card-img-overlay">
+                                <div class="slideText3">
+                                    <h3 class="slideTitle3 fw-bold" style="color: #f4f4f6">One Piece 25th Aniversary</h3>
+                                    <p style="color: #f4f4f6">Celebrating One Piece 25th Aniversary</p>
+                                    <p class="btn btn-light rounded-0 fw-semibold">View More</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
                   </div>
-                  <a href="#">
-                    <div class="carousel-item">
-                        <img src="img/kaws.jpg" class="d-block w-100 img-fluid" alt="...">
-                        <div class="slide card-img-overlay">
-                            <img src="img/kawsLogo.jpg" style="width:200px;" alt="">
-                            <div class="slideText2">
-                                <h3 class="fw-bold" style="color: #f4f4f6">KAWS Edition</h3>
-                                <p style="color: #f4f4f6">Celebrating the Premiere of Kaws 2024</p>
-                                <p class="btn btn-light rounded-0 fw-semibold">View More</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="">
-                    <div class="carousel-item">
-                        <img src="img/onePiece.png" class="d-block w-100 img-fluid" alt="...">
-                        <div class="slide3 card-img-overlay">
-                            <div class="slideText3">
-                                <h3 class="slideTitle3 fw-bold" style="color: #f4f4f6">One Piece 25th Aniversary</h3>
-                                <p style="color: #f4f4f6">Celebrating One Piece 25th Aniversary</p>
-                                <p class="btn btn-light rounded-0 fw-semibold">View More</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
+            </div>
+
         </div>
+        {{-- Hero Section End--}}
 
-    </div>
-    {{-- Hero Section End--}}
+        {{-- Content Section  --}}
+                <div class="content container-fluid">
+                    <div class="contentWrapper">
 
-    {{-- Content Section  --}}
-        <div class="content">
-            <div class="contentWrapper">
-
-                {{-- Best Seller --}}
-                <div class="bestSellerDash">
-                    <h1 class="sectionTitle fw-bold pt-5 pb-5">BEST SELLER</h1>
-
-                    <div class="topProducts">
-                        <div class="productItems pt-3 ps-5 pe-5 rounded">
-                            <div class="row row-cols-1 row-cols-md-4 pb-3 pt-3 ps-2 pe-2">
-                                @foreach ($dataProducts as $data)
-                                <div class="col">
-                                    <div class="card rounded-0" style="width: 23rem;">
-                                        <img src="img/heroImage.jpg" class="card-img-top rounded-0" alt="...">
-                                        <div class="card-body">
-                                            <div class="ratingStar">
-
+                    {{-- Best Seller --}}
+                    <div class="bestSellerDash">
+                        <div class="bestSellerWrapper pt-5 mt-5">
+                            <div class="topProducts">
+                                <div class="card-group gap-4">
+                                    @foreach ($products as $data)
+                                    @foreach ($data->items->take(2) as $item)
+                                        <div class="col">
+                                            <div class="card rounded-0 me-0 w-100">
+                                                <img src="img/heroImage.jpg" class="card-img-top rounded-0" alt="...">
+                                                <div class="card-body ms-4">
+                                                    <h5 class="card-title fw-semibold">{{ $data->name }}</h5>
+                                                    <div class="ratingStar">
+                                                        @for ($i = 0; $i < $item->rating; $i++)
+                                                            <i class="fa-solid fa-star"></i>
+                                                        @endfor
+                                                    </div>
+                                                </div>
+                                                <ul class="list-group list-group-flush border-0 ms-4">
+                                                    <li class="list-group-item fw-bold border-0">IDR {{ $item->price }}</li>
+                                                    <li class="list-group-item border-0">Size: XL</li>
+                                                    <li class="list-group-item border-0">Stock: {{ $item->qty_in_stock }}</li>
+                                                </ul>
+                                                <br>
+                                                <div class="bottomCard list-group list-group-flush">
+                                                    <div class="card-body ms-auto me-4">
+                                                        <a href="#" class="viewMore card-link link-offset-2 link-underline link-underline-opacity-0 text-dark  me-3">View More</a>
+                                                        <a href="#" class="addCart card-link btn btn-dark rounded-0 fw-medium">Add to Cart</a>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <h5 class="card-title fw-semibold">{{$data['name']}}</h5>
                                         </div>
-                                        <ul class="list-group list-group-flush border-0">
-                                            <li class="list-group-item fw-bold border-0">IDR 100.000</li>
-                                            <li class="list-group-item border-0">Size: XL</li>
-                                            <li class="list-group-item border-0">Stock: 100</li>
-                                        </ul>
-                                        <div class="card-body">
-                                            <a href="#" class="addCart card-link btn btn-dark rounded-0 fw-medium">Add to Cart</a>
-                                            <a href="#" class="viewMore card-link link-offset-2 link-underline link-underline-opacity-0 text-dark" style="margin-left: 120px">View More</a>
-                                        </div>
+                                    @endforeach
+                                @endforeach
+                                </div>
+                            </div>
+
+                            <div class="topDescription">
+                                <div class="topWrapper">
+                                    <div class="descElement">
+                                        <h1 class="fw-semibold fs-2">Best Seller in BoysHabit</h1>
+                                        <br>
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam cum voluptates quidem incidunt.</p>
+                                        <br>
+                                        <button class="buttonLight btn btn-light w-50 rounded-0">View More</button>
+                                    </div>
+                                    <div class="arrowButton">
+                                        <a href="#">
+                                            <i class="fa-solid fa-arrow-right-long"></i>
+                                        </a>
                                     </div>
                                 </div>
-                                @endforeach
                             </div>
                         </div>
                     </div>
-                </div>
+                    {{-- Best Seller End --}}
 
-                {{-- Best Seller End --}}
+                    <div class="discountDash">
+                        <div class="card-group mt-5 pt-5">
+                            <div class="card">
+                              <img src="img/heroImage.jpg" class="card-img-top" alt="...">
+                            </div>
+                            <div class="card">
+                              <img src="img/heroImage.jpg" class="card-img-top" alt="...">
+                            </div>
+                            <div class="card">
+                              <img src="img/heroImage.jpg" class="card-img-top" alt="...">
+                            </div>
+                          </div>
+                    </div>
 
-                {{-- Categories --}}
+                    {{-- Categories --}}
 
-                <div class="categoryDash">
-                    <h1 class="sectionTitle fw-bold pt-5 pb-5">CATEGORIES</h1>
-
-                </div>
-
-                {{-- Categories End --}}
-
-
+                    <div class="categoryDash mb-5 pb-5">
+                        <div class="categoryItem mt-5 pt-5">
+                            <div class="row row-cols-1 row-cols-md-4 g-4 gap-0 m-0 p-0">
+                                @foreach ($categories->take(4) as $data)
+                                <a href="">
+                                    <div class="col">
+                                        <div class="card rounded-0">
+                                          <img src="img/heroImage.jpg" class="card-img-top rounded-0" alt="...">
+                                          <div class="card-body">
+                                            <h5 class="card-title">{{$data['category_name']}}</h5>
+                                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                          </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                  @endforeach
+                            </div>
+                        </div>
+                    </div>
+                    {{-- Categories End --}}
             </div>
-        </div>
-    {{-- Content Section End --}}
+           </div>
+        {{-- Content Section End --}}
 
-</x-layout>
+    </x-layout>
+
+

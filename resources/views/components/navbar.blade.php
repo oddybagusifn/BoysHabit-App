@@ -1,5 +1,5 @@
 <nav class="navbar navbar-dark navbar-expand-lg fixed-top p-3">
-    <div class="container-fluid">
+    <div class="container-fluid ms-5 me-5 ps-5 pe-5">
     <div class="logo">
         <a class="navbar-brand fw-bolder" href="#">
             <img class="imageLogo" src="img/logo.png" alt="">
@@ -12,7 +12,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
           <li class="nav-item  pe-4">
-            <a class="nav-link active fw-semibold" aria-current="page" href="/dashboard">Home</a>
+            <a class="nav-link active fw-semibold" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item pe-4">
             <a class="nav-link fw-semibold" href="/product">Products</a>

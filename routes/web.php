@@ -1,16 +1,11 @@
 <?php
 
-use App\Http\Controllers\productController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductItemController;
 
+Route::get('/', [ProductController::class, 'home']);
 
-Route::get('/dashboard', [productController::class, 'dashboard']);
-Route::get('/product', [productController::class, 'productList']);
-
-
-Route::get('/', function () {
-    return view('welcome');
-});
 
 
 

@@ -3,21 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\ProductItem;
 use Illuminate\Http\Request;
+use App\Models\ProductCategory;
 
-class productController extends Controller
+class ProductController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function dashboard()
-    {
-        $dataProducts = Product::take(4)->get();
-        return view('dashboard', compact('dataProducts'));
-    }
-
-    public function productList(){
-        $dataProducts = Product::all();
-        return view('product', compact('dataProducts'));
+    public function home(){
+        $products = Product::with('items')->get();
+        $items = ProductItem::all();
+        $categories = ProductCategory::all();
+        // dd($products);
+        return view('dashboard', compact('products', 'items', 'categories'));
     }
 }

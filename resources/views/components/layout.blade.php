@@ -17,7 +17,7 @@
             {{-- content end --}}
 
             {{-- footer --}}
-
+            <x-footer></x-footer>
             {{-- footer end --}}
 
         </div>
