@@ -16,12 +16,29 @@ html, body{
     background-color:#1c1c1c;
 }
 
+.dropdown-menu{
+    width: 16rem;
+    border-radius: 0;
+    margin-left: .500rem;
+}
+
+.dropdown:hover .dropdown-menu{
+    display: block;
+    border-radius: 0;
+    margin-top: .300rem;
+    margin-left: .500rem;
+}
+
+.dropdown-item:hover{
+    background-color: red;
+}
+
 .imageLogo{
     width: 30px;
 }
 
 .carousel-inner{
-    height: 700px;
+    height: 850px;
     /* border: solid green; */
 }
 
@@ -37,14 +54,20 @@ html, body{
 }
 
 
-.heroText{
+.carousel-item .heroText{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 
 .slideContent{
+    margin-top: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     text-align: center;
 }
 
@@ -159,6 +182,71 @@ html, body{
 .categoryItem .row a{
     text-decoration: none;
 }
+
+.appBenefitWrapper{
+    border: solid red;
+    height: 600px;
+}
+
+.benefitContent{
+    display: flex;
+    justify-content: center;
+}
+
+.product .card-group{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginWrapper{
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.loginForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: .5px solid #1c1c1c;
+    padding: 100px;
+}
+
+#exampleInputEmail1{
+    background-color: #f4f4f6;
+    border: 1px solid rgba(100, 100, 100, .60);
+}
+
+#exampleInputPassword1{
+    background-color: #f4f4f6;
+    border: 1px solid rgba(100, 100, 100, .60);
+}
+
+.loginButton{
+    background-color: #1c1c1c;
+}
+
+.loginButton:hover{
+    background-color: #f4f4f6;
+}
+
+.createAcc{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#createAcc{
+    color: #1c1c1c;
+    text-decoration: none;
+}
+
+
+
 
 
 

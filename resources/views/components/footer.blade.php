@@ -8,17 +8,17 @@
             >
       <!-- Section: Social media -->
       <section
-               class="d-flex justify-content-between p-4"
+               class="d-flex justify-content-between p-4 ms-5 me-5 ps-5 pe-5"
                style="background-color: #1c1c1c"
                >
         <!-- Left -->
-        <div class="me-5">
+        <div class="me-5 ms-4">
           <span>Get connected with us on social networks:</span>
         </div>
         <!-- Left -->
 
         <!-- Right -->
-        <div>
+        <div class="me-1">
           <a href="" class="text-white me-4">
             <i class="fab fa-facebook-f"></i>
           </a>

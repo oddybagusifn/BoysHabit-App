@@ -69,10 +69,9 @@
                                                 <img src="img/heroImage.jpg" class="card-img-top rounded-0" alt="...">
                                                 <div class="card-body ms-4">
                                                     <h5 class="card-title fw-semibold">{{ $data->name }}</h5>
-                                                    <div class="ratingStar">
-                                                        @for ($i = 0; $i < $item->rating; $i++)
+                                                    <div class="rating">
                                                             <i class="fa-solid fa-star"></i>
-                                                        @endfor
+                                                            {{number_format($item['rating'], 1, ',', '.')}}
                                                     </div>
                                                 </div>
                                                 <ul class="list-group list-group-flush border-0 ms-4">
@@ -150,6 +149,18 @@
                         </div>
                     </div>
                     {{-- Categories End --}}
+
+                    {{-- App Benefit --}}
+
+                    <div class="appBenefitDash m-5">
+                        <div class="appBenefitWrapper">
+                            <div class="benefitContent p-5">
+                                <h1 class="fw-semibold">Why BoysHabit?</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- App Benefit End --}}
             </div>
            </div>
         {{-- Content Section End --}}

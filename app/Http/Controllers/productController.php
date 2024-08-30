@@ -16,4 +16,9 @@ class ProductController extends Controller
         // dd($products);
         return view('dashboard', compact('products', 'items', 'categories'));
     }
+
+    public function productView(){
+        $products = Product::all();
+        return view('product', compact('products'));
+    }
 }
