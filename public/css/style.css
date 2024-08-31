@@ -30,7 +30,7 @@ html, body{
 }
 
 .dropdown-item:hover{
-    background-color: red;
+    background-color: #646464;
 }
 
 .imageLogo{

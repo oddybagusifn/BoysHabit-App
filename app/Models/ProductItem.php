@@ -14,7 +14,8 @@ class ProductItem extends Model
         'SKU',
         'qty_in_stock',
         'product_image',
-        'price'
+        'price',
+        'rating'
     ];
 
     public function product()

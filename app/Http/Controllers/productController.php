@@ -21,4 +21,9 @@ class ProductController extends Controller
         $products = Product::all();
         return view('product', compact('products'));
     }
+
+    public function detailProduct($id){
+        dd($id);
+        return view('detailProduct');
+    }
 }

@@ -24,24 +24,42 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         DB::table('product_categories')->insert([
-            'parent_category_id' => 1,
-            'category_name' => "Example"
+            ['parent_category_id' => 1,
+            'category_name' => "Example"],
+            ['parent_category_id' => 2,
+            'category_name' => "Example"]
         ]);
 
         DB::table('products')->insert([
+            [
             'category_id' => 1,
             'name' => 'Example',
             'description' => 'Example',
             'product_image' => "Example.jpg",
+            ],
+            [
+            'category_id' => 2,
+            'name' => 'Example2',
+            'description' => 'Example',
+            'product_image' => "Example.jpg",
+            ],
         ]);
 
         DB::table('product_items')->insert([
-            'product_id' => 1,
+            ['product_id' => 1,
             'SKU' => "Example",
             'qty_in_stock' => 50,
             'product_image' => "Example",
             'price' => 100000,
             'rating' => 5
+            ],
+            ['product_id' => 2,
+            'SKU' => "Example2",
+            'qty_in_stock' => 50,
+            'product_image' => "Example",
+            'price' => 100000,
+            'rating' => 5
+            ],
         ]);
 
         DB::table('promotions')->insert([

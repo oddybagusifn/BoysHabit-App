@@ -21,7 +21,7 @@
                         <br>
                         <div class="bottomCard list-group list-group-flush">
                             <div class="card-body ms-auto me-4">
-                                <a href="#" class="viewMore card-link link-offset-2 link-underline link-underline-opacity-0 text-dark  me-3">View More</a>
+                                <a href="/detail_product/{{$data->id}}" class="viewMore card-link link-offset-2 link-underline link-underline-opacity-0 text-dark  me-3">View More</a>
                                 <a href="#" class="addCart card-link btn btn-dark rounded-0 fw-medium">Add to Cart</a>
                             </div>
                         </div>

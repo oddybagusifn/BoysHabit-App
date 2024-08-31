@@ -8,8 +8,8 @@
                         <img src="img/heroImage.jpg" class="d-block w-100 img-fluid bg-black bg-gradient" alt="...">
                             <div class="heroText card-img-overlay">
                                 <div class="slideContent">
-                                    <h1 class="brandName fw-bold fst-italic">BOYSHABIT</h1>
-                                    <h3 class="fw-semibold fst-italic" style="color: #f4f4f6;">Endless Style, Limitless Choices</h3>
+                                    <h1 class="brandName fw-bold fst-italic">BOYS<span style="color: #1c1c1c">HABIT</span></h1>
+                                    <h3 class="fw-semibold fst-italic" style="color: #f4f4f6;">Endless Style,<span style="color: #1c1c1c"> Limitless Choices</span></h3>
                                 </div>
                             </div>
                       </div>
@@ -62,8 +62,8 @@
                         <div class="bestSellerWrapper pt-5 mt-5">
                             <div class="topProducts">
                                 <div class="card-group gap-4">
-                                    @foreach ($products as $data)
-                                    @foreach ($data->items->take(2) as $item)
+                                    @foreach ($products->take(2) as $data)
+                                    @foreach ($data->items as $item)
                                         <div class="col">
                                             <div class="card rounded-0 me-0 w-100">
                                                 <img src="img/heroImage.jpg" class="card-img-top rounded-0" alt="...">
@@ -82,7 +82,7 @@
                                                 <br>
                                                 <div class="bottomCard list-group list-group-flush">
                                                     <div class="card-body ms-auto me-4">
-                                                        <a href="#" class="viewMore card-link link-offset-2 link-underline link-underline-opacity-0 text-dark  me-3">View More</a>
+                                                        <a href="/detail_product/{{$data->id}}" class="viewMore card-link link-offset-2 link-underline link-underline-opacity-0 text-dark  me-3">View More</a>
                                                         <a href="#" class="addCart card-link btn btn-dark rounded-0 fw-medium">Add to Cart</a>
                                                     </div>
                                                 </div>

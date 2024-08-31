@@ -9,6 +9,7 @@ use App\Http\Controllers\RegisterController;
 
 Route::get('/', [ProductController::class, 'home']);
 Route::get('/product', [ProductController::class, 'productView']);
+Route::get('/detail_product/{id}', [ProductController::class, 'detailProduct']);
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
