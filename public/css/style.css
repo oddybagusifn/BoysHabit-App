@@ -13,7 +13,7 @@ html, body{
 }
 
 .navbar{
-    background-color:#1c1c1c;
+   background-color:#1c1c1c;
 }
 
 .dropdown-menu{
@@ -110,6 +110,13 @@ html, body{
 .contentWrapper{
     margin-left: 5%;
     margin-right: 5%;
+    /* border: solid red; */
+}
+
+.detailWrapper{
+    margin-left: 5%;
+    margin-right: 5%;
+    border: solid red;
 }
 
 .sectionTitle{
@@ -244,6 +251,52 @@ html, body{
     color: #1c1c1c;
     text-decoration: none;
 }
+
+.productView{
+    /* border: solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.inputView{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.detailProduct{
+    /* border: solid green; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ratingDetail{
+    display: flex;
+    flex-direction: row;
+}
+
+.subtotal{
+    display: flex;
+    flex-direction: row;
+}
+
+.quantity{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.addCartDetail{
+    width: 250%;
+    display: flex;
+}
+
+.cartView{
+    display: flex;
+}
+
 
 
 

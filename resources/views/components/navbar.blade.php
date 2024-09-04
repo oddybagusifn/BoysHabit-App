@@ -1,7 +1,7 @@
 <nav class="navbar navbar-dark navbar-expand-lg sticky-top p-3">
     <div class="container-fluid ms-5 me-5 ps-5 pe-5">
     <div class="logo">
-        <a class="navbar-brand fw-bolder" href="#">
+        <a class="navbar-brand fw-bolder" href="/">
             <img class="imageLogo" src="img/logo.png" alt="">
             boyshabit.
         </a>
@@ -26,7 +26,7 @@
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Tops</a></li>
-              <li><a class="dropdown-item" href="#">Clothing</a></li>
+              <li><a class="dropdown-item" href="#">Clothes</a></li>
               <li><a class="dropdown-item" href="#">Shoes</a></li>
               <li><a class="dropdown-item" href="#">Bags</a></li>
               <li><a class="dropdown-item" href="#">Accessories</a></li>

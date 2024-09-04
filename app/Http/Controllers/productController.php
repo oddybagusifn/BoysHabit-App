@@ -14,7 +14,7 @@ class ProductController extends Controller
         $items = ProductItem::all();
         $categories = ProductCategory::all();
         // dd($products);
-        return view('dashboard', compact('products', 'items', 'categories'));
+        return view('homepage', compact('products', 'items', 'categories'));
     }
 
     public function productView(){
@@ -23,7 +23,9 @@ class ProductController extends Controller
     }
 
     public function detailProduct($id){
-        dd($id);
-        return view('detailProduct');
+        $products = Product::with('items')->get();
+        $details = Product::with('items')->findOrFail($id);
+        $items = ProductItem::all();
+        return view('detailProduct', compact('products','details', 'items'));
     }
 }

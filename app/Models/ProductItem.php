@@ -15,6 +15,7 @@ class ProductItem extends Model
         'qty_in_stock',
         'product_image',
         'price',
+        'size',
         'rating'
     ];
 

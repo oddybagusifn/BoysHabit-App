@@ -18,6 +18,7 @@ return new class extends Migration
             $table->unsignedInteger('qty_in_stock');
             $table->String('product_image');
             $table->integer('price');
+            $table->String('size');
             $table->float('rating');
             $table->timestamps();
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');

@@ -32,3 +32,7 @@ Route::get('/profile', [ProfileController::class, 'index'])->middleware('auth');
 
 
 
+
+
+
+
