@@ -10,11 +10,14 @@
                         <div class="detailProduct ms-5 ps-5">
                             <h2 class="fw-semibold">{{$details->name}}</h2>
                             <div class="ratingDetail">
-                                <i class="fa-solid fa-star"></i>
-                                <p class="ms-1">5.0</p>
+
+                                @for ($i = 0; $i < $details->items->first()->rating; $i++)
+                                <i class="fa-solid fa-star mb-3"></i>
+                                @endfor
                             </div>
-                            <p class="fw-medium">Rp.100.000</p>
-                            <p class="text-secondary">SKU: 340100449931</p>
+                            <p class="fw-medium">IDR {{number_format($details->items->first()->price, 2, ',', '.')}}</p>
+                            <p class="text-secondary">SKU: {{$details->items->first()->SKU}}</p>
+                            <p>Size: </p>
                             <div class="btn-group w-50" role="group" aria-label="Basic radio toggle button group">
                                 <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
                                 <label class="btn btn-outline-dark rounded-0" for="btnradio1">S</label>
@@ -35,11 +38,16 @@
                                 <label for="quantity">Quaantity:</label>
                                 <input type="number" class="form-control rounded-0 ms-2" value="1" min="1" max="10" step="1" style="border: 1px solid rgba(90, 90, 90, .5); background:#f4f4f6; width:80px">
                             </div>
-                            <div class="subtotal mt-3">
-                                <P class="text-secondary">Subtotal:</P>
-                                <p class="ms-1 fw-medium">Rp.100.000</p>
+                            <div class="subtotal mt-5">
+                                <P>Subtotal:</P>
+                                <p class="ms-1 fw-medium">IDR 100.000</p>
                             </div>
-                            <a href="#" class="addCartDetail card-link btn btn-dark rounded-0 fw-medium mt-3 text-center">Add to Cart</a>
+                            <div class="cartSubmit">
+                                <a href="#" class="addCartDetail card-link btn btn-dark rounded-0 w-75 fw-medium text-center" style="background-color: #1c1c1c">Add to Cart</a>
+                                <button id="buttonFav"  class="favButton btn  border-dark rounded-0 ms-2"  onclick="changeColor()">
+                                    <i class="fa-regular fa-heart"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                     <div class="imageClick mt-3">
@@ -65,28 +73,30 @@
                                     @foreach ($products->take(4) as $data)
                                     @foreach ($data->items as $item)
                                         <div class="col">
-                                            <div class="card rounded-0 me-0 w-100">
-                                                <img src="/img/heroImage.jpg" class="card-img-top rounded-0" alt="...">
-                                                <div class="card-body ms-4">
-                                                    <h5 class="card-title fw-semibold">{{ $data->name }}</h5>
-                                                    <div class="rating">
-                                                            <i class="fa-solid fa-star"></i>
-                                                            {{number_format($item['rating'], 1, ',', '.')}}
+                                            <a class="aCard" href="/detail_product/{{$data->id}}">
+                                                <div class="card rounded-0 me-0 w-100">
+                                                    <img src="/img/heroImage.jpg" class="card-img-top rounded-0" alt="...">
+                                                    <div class="card-body ms-4">
+                                                        <h5 class="card-title fw-semibold">{{ $data->name }}</h5>
+                                                        <div class="rating">
+                                                                <i class="fa-solid fa-star"></i>
+                                                                {{number_format($item['rating'], 1, ',', '.')}}
+                                                        </div>
+                                                    </div>
+                                                    <ul class="list-group list-group-flush border-0 ms-4">
+                                                        <li class="list-group-item fw-bold border-0">IDR {{ number_format($item->price, 2, ',', '.') }}</li>
+                                                        <li class="list-group-item border-0">Size: {{$details->items->first()->size}}</li>
+                                                        <li class="list-group-item border-0">Stock: {{ $item->qty_in_stock }}</li>
+                                                    </ul>
+                                                    <br>
+                                                    <div class="bottomCard list-group list-group-flush">
+                                                        <div class="card-body ms-auto me-4">
+                                                            <a href="/detail_product/{{$data->id}}" class="viewMore card-link link-offset-2 link-underline link-underline-opacity-0 text-dark  me-3">View More</a>
+                                                            <a href="#" class="addCart card-link btn btn-dark rounded-0 fw-medium">Add to Cart</a>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <ul class="list-group list-group-flush border-0 ms-4">
-                                                    <li class="list-group-item fw-bold border-0">IDR {{ $item->price }}</li>
-                                                    <li class="list-group-item border-0">Size: XL</li>
-                                                    <li class="list-group-item border-0">Stock: {{ $item->qty_in_stock }}</li>
-                                                </ul>
-                                                <br>
-                                                <div class="bottomCard list-group list-group-flush">
-                                                    <div class="card-body ms-auto me-4">
-                                                        <a href="/detail_product/{{$data->id}}" class="viewMore card-link link-offset-2 link-underline link-underline-opacity-0 text-dark  me-3">View More</a>
-                                                        <a href="#" class="addCart card-link btn btn-dark rounded-0 fw-medium">Add to Cart</a>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            </a>
                                         </div>
                                     @endforeach
                                 @endforeach
@@ -96,4 +106,5 @@
             </div>
     </div>
 
+    <script src="/js/script.js"></script>
 </x-layout>

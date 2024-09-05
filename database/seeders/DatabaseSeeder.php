@@ -74,7 +74,7 @@ class DatabaseSeeder extends Seeder
 
         DB::table('product_items')->insert([
             ['product_id' => 1,
-            'SKU' => "Example",
+            'SKU' => "TSHIRT-BLK-LG",
             'qty_in_stock' => 50,
             'product_image' => "Example",
             'price' => 100000,
@@ -82,7 +82,7 @@ class DatabaseSeeder extends Seeder
             'rating' => 5
             ],
             ['product_id' => 2,
-            'SKU' => "Example2",
+            'SKU' => "TSHIRT-BLK-LG",
             'qty_in_stock' => 50,
             'product_image' => "Example",
             'price' => 100000,
@@ -90,7 +90,7 @@ class DatabaseSeeder extends Seeder
             'rating' => 5
             ],
             ['product_id' => 3,
-            'SKU' => "Example3",
+            'SKU' => "TSHIRT-BLK-LG",
             'qty_in_stock' => 50,
             'product_image' => "Example",
             'price' => 100000,
@@ -98,7 +98,7 @@ class DatabaseSeeder extends Seeder
             'rating' => 5
             ],
             ['product_id' => 4,
-            'SKU' => "Example4",
+            'SKU' => "TSHIRT-BLK-LG",
             'qty_in_stock' => 50,
             'product_image' => "Example",
             'price' => 100000,

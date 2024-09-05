@@ -26,6 +26,7 @@ class ProductController extends Controller
         $products = Product::with('items')->get();
         $details = Product::with('items')->findOrFail($id);
         $items = ProductItem::all();
+        // dd($items);
         return view('detailProduct', compact('products','details', 'items'));
     }
 }

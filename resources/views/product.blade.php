@@ -3,7 +3,8 @@
         <div class="card-group row row-cols-1 row-cols-md-4 g-4 gap-0 m-0 p-0 gap-4">
             @foreach ($products as $data)
             @foreach ($data->items as $item)
-                <div class="col">
+            <div class="col">
+                    <a class="aCard" href="/detail_product/{{$data->id}}">
                     <div class="card rounded-0 me-0 w-100">
                         <img src="img/heroImage.jpg" class="card-img-top rounded-0" alt="...">
                         <div class="card-body ms-4">
@@ -14,8 +15,8 @@
                             </div>
                         </div>
                         <ul class="list-group list-group-flush border-0 ms-4">
-                            <li class="list-group-item fw-bold border-0">IDR {{ $item->price }}</li>
-                            <li class="list-group-item border-0">Size: XL</li>
+                            <li class="list-group-item fw-bold border-0">IDR {{ number_format($item->price, 2, ',', '.') }}</li>
+                            <li class="list-group-item border-0">Size: {{$item->size}}</li>
                             <li class="list-group-item border-0">Stock: {{ $item->qty_in_stock }}</li>
                         </ul>
                         <br>
@@ -26,6 +27,7 @@
                             </div>
                         </div>
                     </div>
+                </a>
                 </div>
             @endforeach
         @endforeach

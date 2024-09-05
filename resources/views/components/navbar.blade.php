@@ -2,7 +2,7 @@
     <div class="container-fluid ms-5 me-5 ps-5 pe-5">
     <div class="logo">
         <a class="navbar-brand fw-bolder" href="/">
-            <img class="imageLogo" src="img/logo.png" alt="">
+            <img class="imageLogo" src="/img/logo.png" alt="">
             boyshabit.
         </a>
     </div>
@@ -12,13 +12,13 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
           <li class="nav-item  pe-4">
-            <a class="nav-link active fw-semibold" aria-current="page" href="/">Home</a>
+            <a class="nav-link {{ request()->is('/') ? 'active' : '' }} fw-semibold" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item pe-4">
-            <a class="nav-link fw-semibold" href="/product">Products</a>
+            <a class="nav-link {{ request()->is('product') ? 'active' : '' }} fw-semibold" href="/product">Products</a>
           </li>
           <li class="nav-item pe-4">
-            <a class="nav-link fw-semibold" href="#">Best Seller</a>
+            <a class="nav-link {{ request()->is('best_seller') ? 'active' : '' }} fw-semibold" href="#">Best Seller</a>
           </li>
           <li class="nav-item dropdown pe-4">
             <a class="nav-link dropdown-toggle fw-semibold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -36,7 +36,7 @@
             </ul>
           </li>
           <li class="nav-item pe-4">
-            <a class="nav-link fw-semibold" href="#">About</a>
+            <a class="nav-link {{ request()->is('about') ? 'active' : '' }} fw-semibold" href="#">About</a>
           </li>
         </ul>
         <ul class="navbar-nav mb-2 mb-lg-0">
