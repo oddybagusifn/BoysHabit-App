@@ -38,7 +38,7 @@ html, body{
 }
 
 .carousel-inner{
-    height: 850px;
+    height: 93vh;
     /* border: solid green; */
 }
 
@@ -307,6 +307,46 @@ html, body{
     width: 700px;
     display: flex;
 }
+
+.cart{
+    /* border: solid red; */
+    position: fixed;
+    z-index: 1600;
+    left: 120rem;
+    width: 100%;
+    height: 100vh;
+}
+
+.cartView{
+    /* border: solid red; */
+    position: fixed;
+    z-index: 2000;
+    height: 100vh;
+    width: 100%;
+    background: #f4f4f6;
+    display: flex;
+    flex-direction: column;
+    left: 120rem;
+}
+
+.cartHead{
+    /* border: solid red; */
+    height: 72px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.cartBody{
+    /* border: solid red; */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
 
 
 

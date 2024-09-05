@@ -47,9 +47,9 @@
             </li>
 
             <li class="nav-item pe-4">
-                <a class="nav-link" href="#">
+                <button class="nav-link btn" href="" id="cartButton">
                     <i class="fa-solid fa-cart-shopping"  style="color:white"></i>
-                </a>
+                </button>
             </li>
 
             @auth

@@ -44,8 +44,8 @@
                             </div>
                             <div class="cartSubmit">
                                 <a href="#" class="addCartDetail card-link btn btn-dark rounded-0 w-75 fw-medium text-center" style="background-color: #1c1c1c">Add to Cart</a>
-                                <button id="buttonFav"  class="favButton btn  border-dark rounded-0 ms-2"  onclick="changeColor()">
-                                    <i class="fa-regular fa-heart"></i>
+                                <button id="buttonFav"  class="favButton btn  border-dark rounded-0 ms-2">
+                                    <i class="fa-regular fa-heart" id="favIcon"></i>
                                 </button>
                             </div>
                         </div>
@@ -105,6 +105,4 @@
                 </div>
             </div>
     </div>
-
-    <script src="/js/script.js"></script>
 </x-layout>
