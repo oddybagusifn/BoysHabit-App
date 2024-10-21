@@ -4,8 +4,15 @@
         <div class="contentWrapper">
             <div class="productView pt-5 pb-5">
                     <div class="inputView">
-                        <div class="productImage w-50">
-                            <img src="/img/heroImage.jpg" class="img-fluid" style="width:100%" alt="...">
+                        <div class="imageGroup">
+                            <div class="productImage w-100">
+                                <img src="/img/heroImage.jpg" class="img-fluid" style="width:100%" alt="...">
+                            </div>
+                            <div class="imageClick mt-3">
+                                <img src="/img/heroImage.jpg" alt="" style="width:200px">
+                                <img src="/img/heroImage.jpg" alt="" style="width:200px">
+                                <img src="/img/heroImage.jpg" alt="" style="width:200px">
+                            </div>
                         </div>
                         <div class="detailProduct ms-5 ps-5">
                             <h2 class="fw-semibold">{{$details->name}}</h2>
@@ -48,21 +55,21 @@
                                     <i class="fa-regular fa-heart" id="favIcon"></i>
                                 </button>
                             </div>
+                            <div class="productDesc mt-5">
+                                <h5>Details</h5>
+                                <hr class="border border-dark border-2 opacity-100" style="width:100px">
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti consequuntur architecto voluptas eius deserunt soluta pariatur fugit adipisci accusantium? Rerum vitae nam assumenda ipsum maiores laborum itaque asperiores quos explicabo.
+                                    A soluta expedita voluptatibus ducimus minima id sunt, unde facilis inventore. Labore, commodi, repellendus nisi, aperiam natus veritatis suscipit a sint corporis laboriosam ut maiores fugit quae? Repudiandae, officia veniam?
+                                    Quisquam nam sequi vel, pariatur qui tempora cum, veritatis reprehenderit animi quo doloremque accusamus veniam distinctio necessitatibus temporibus impedit nemo non, iste aliquid! Perferendis voluptas ullam assumenda dicta eos. Tempore.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="imageClick mt-3">
-                        <img src="/img/heroImage.jpg" alt="" style="width:200px">
-                        <img src="/img/heroImage.jpg" alt="" style="width:200px">
-                        <img src="/img/heroImage.jpg" alt="" style="width:200px">
+                    <div class="descReviewProduct mt-5 pt-3">
+                        <div class="productComment">
+                            <h5 class="text-secondary">Comment</h5>
+                        </div>
+                        <div class="comentSection"></div>
                     </div>
-                    <div class="productDescription mt-5 pt-3">
-                        <h5>Details</h5>
-                        <hr class="border border-dark border-2 opacity-100" style="width:100px">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti consequuntur architecto voluptas eius deserunt soluta pariatur fugit adipisci accusantium? Rerum vitae nam assumenda ipsum maiores laborum itaque asperiores quos explicabo.
-                            A soluta expedita voluptatibus ducimus minima id sunt, unde facilis inventore. Labore, commodi, repellendus nisi, aperiam natus veritatis suscipit a sint corporis laboriosam ut maiores fugit quae? Repudiandae, officia veniam?
-                            Quisquam nam sequi vel, pariatur qui tempora cum, veritatis reprehenderit animi quo doloremque accusamus veniam distinctio necessitatibus temporibus impedit nemo non, iste aliquid! Perferendis voluptas ullam assumenda dicta eos. Tempore.</p>
-                    </div>
-
                     <hr>
 
 

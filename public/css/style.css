@@ -262,7 +262,6 @@ html, body{
 .inputView{
     display: flex;
     flex-direction: row;
-
 }
 
 .detailProduct{
@@ -308,7 +307,7 @@ html, body{
     display: flex;
 }
 
-.cart{
+.overlay{
     /* border: solid red; */
     position: fixed;
     z-index: 1600;
@@ -343,6 +342,23 @@ html, body{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.descReviewProduct{
+    /* border: solid black; */
+    display: flex;
+    flex-direction: row;
+}
+
+.productComment{
+    /* border: solid red; */
+    width: 45%;
+}
+
+.productLayout{
+    /* border: solid red; */
+    display: flex;
+    flex-direction: row;
 }
 
 
