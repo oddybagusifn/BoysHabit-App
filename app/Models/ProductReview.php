@@ -5,23 +5,22 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ProductItem extends Model
+class ProductReview extends Model
 {
     use HasFactory;
-    protected $table = 'product_items';
+    protected $table = 'product_reviews';
     protected $fillable = [
         'product_id',
-        'SKU',
-        'qty_in_stock',
-        'product_image',
-        'price',
-        'size',
-        'rating'
+        'user_id',
+        'rating',
+        'review',
     ];
 
-    public function product()
-    {
+    public function products(){
         return $this->belongsTo(Product::class);
     }
 
+    public function users(){
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

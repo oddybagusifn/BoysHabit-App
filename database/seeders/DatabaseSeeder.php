@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use App\Models\Product;
 use App\Models\ProductDetail;
+use Carbon\Carbon;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -78,7 +79,6 @@ class DatabaseSeeder extends Seeder
             'qty_in_stock' => 50,
             'product_image' => "Example",
             'price' => 100000,
-            'size' => 'S, M, L, XL, XXL',
             'rating' => 5
             ],
             ['product_id' => 2,
@@ -86,7 +86,6 @@ class DatabaseSeeder extends Seeder
             'qty_in_stock' => 50,
             'product_image' => "Example",
             'price' => 100000,
-            'size' => 'S, M, L, XL, XXL',
             'rating' => 5
             ],
             ['product_id' => 3,
@@ -94,7 +93,6 @@ class DatabaseSeeder extends Seeder
             'qty_in_stock' => 50,
             'product_image' => "Example",
             'price' => 100000,
-            'size' => 'S, M, L, XL, XXL',
             'rating' => 5
             ],
             ['product_id' => 4,
@@ -102,7 +100,6 @@ class DatabaseSeeder extends Seeder
             'qty_in_stock' => 50,
             'product_image' => "Example",
             'price' => 100000,
-            'size' => 'S, M, L, XL, XXL',
             'rating' => 5
             ],
         ]);
@@ -119,5 +116,72 @@ class DatabaseSeeder extends Seeder
             'category_id' => 1,
             'promotion_id' => 1,
         ]);
+
+        DB::table('product_reviews')->insert([
+            [
+                'product_id' => 1,
+                'user_id' => 11,
+                'rating' => 5,
+                'review' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Error exercitationem saepe cupiditate obcaecati, nulla soluta eveniet, doloribus recusandae quibusdam laborum quasi ipsum quaerat maxime reiciendis, amet iusto facere ut non.
+                            At sint, consequuntur nobis rerum a numquam est, harum voluptate laboriosam quas consectetur? Perspiciatis sed nostrum velit obcaecati voluptate aspernatur? Omnis doloremque, voluptates quidem ipsum quibusdam asperiores nesciunt minima deserunt?
+                            Tempora exercitationem asperiores expedita maxime dolores fuga unde ipsum laudantium. Fuga repellendus consequatur quo laboriosam ratione? Ratione distinctio aut in sint, a exercitationem minus animi quisquam nobis facilis eos adipisci?',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'product_id' => 1,
+                'user_id' => 10,
+                'rating' => 4,
+                'review' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Error exercitationem saepe cupiditate obcaecati, nulla soluta eveniet, doloribus recusandae quibusdam laborum quasi ipsum quaerat maxime reiciendis, amet iusto facere ut non.
+                            At sint',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'product_id' => 2,
+                'user_id' => 11,
+                'rating' => 5,
+                'review' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Error exercitationem saepe cupiditate obcaecati, nulla soluta eveniet, doloribus recusandae quibusdam laborum quasi ipsum quaerat maxime reiciendis, amet iusto facere ut non.
+                            At sint',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ]
+        ]);
+
+        DB::table('carts')->insert([
+            [
+                'user_id' => 11
+            ]
+        ]);
+
+        DB::table('sizes')->insert([
+            [
+                'size_name' => 'S'
+            ],
+            [
+                'size_name' => 'M'
+            ],
+            [
+                'size_name' => 'L'
+            ],
+            [
+                'size_name' => 'XL'
+            ],
+            [
+                'size_name' => 'XXL'
+            ],
+        ]);
+
+        // DB::table('cart_items')->insert([
+        //     [
+        //         'cart_id' => 1,
+        //         'product_id' => 1,
+        //         'size_id' => 3,
+        //         'created_at' => Carbon::now(),
+        //         'updated_at' => Carbon::now()
+        //     ]
+
+        // ]);
+
     }
 }

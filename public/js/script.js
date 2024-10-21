@@ -8,6 +8,8 @@ let closeCart = document.getElementById('closeCart')
 
 
 
+
+
 cartBtn.addEventListener('click', function(){
     body.style.overflow = 'hidden'
     overlay.style.left = '0'
@@ -31,5 +33,6 @@ overlay.addEventListener('click', function(){
     overlay.style.left = '120rem'
     overlay.style.backgroundColor = 'rgb(28, 28, 28, 0)'
 })
+
 
 

@@ -1,4 +1,5 @@
 <div class="overlay" id="overlay"></div>
+    {{-- @if ($cartItems->isNotEmpty()) --}}
     <div class="cartView fixed-element  w-25" id="cartView">
         <div class="cartHead border-bottom border-opacity-50 border-dark">
             <h1 class="fw-semibold fs-4 ms-4 me-4 mb-0 mt-0">
@@ -9,8 +10,11 @@
                 <i class="fa-solid fa-x"></i>
             </button>
         </div>
-        <div class="cartBody">
-            <h5 class="fw-light text-secondary">Your cart is empty</h5>
-        </div>
+    <div class="cartBody">
+        <h5 class="fw-light text-secondary">Your cart is empty</h5>
+        <a href="/cart_page" style="color: #1c1c1c; text-decoration:none">View All</a>
     </div>
+    {{-- @endif --}}
+</div>
+
 

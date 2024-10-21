@@ -71,7 +71,7 @@
                                                     <div class="card-body ms-4">
                                                         <h5 class="card-title fw-semibold">{{ $data->name }}</h5>
                                                         <div class="rating">
-                                                                <i class="fa-solid fa-star"></i>
+                                                                <i class="fa-solid fa-star" style="color:#FFD438"></i>
                                                                 {{number_format($item['rating'], 1, ',', '.')}}
                                                         </div>
                                                     </div>

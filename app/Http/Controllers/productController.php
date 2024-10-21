@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
+use App\Models\Size;
 use App\Models\Product;
+use App\Models\CartItem;
 use App\Models\ProductItem;
 use Illuminate\Http\Request;
+use App\Models\ProductReview;
 use App\Models\ProductCategory;
 
 class ProductController extends Controller
@@ -25,8 +29,14 @@ class ProductController extends Controller
     public function detailProduct($id){
         $products = Product::with('items')->get();
         $details = Product::with('items')->findOrFail($id);
-        $items = ProductItem::all();
-        // dd($items);
-        return view('detailProduct', compact('products','details', 'items'));
+        $items = ProductItem::find($id);
+        $reviews = ProductReview::with('users')->get();
+        $carts = Cart::with('cartItems')->get();
+        $cartItems = CartItem::with('products')->get();
+        $sizes = Size::all();
+
+        // dd($carts);
+        return view('detailProduct', compact('products', 'details', 'items', 'reviews', 'cartItems', 'sizes', 'carts'));
     }
+
 }

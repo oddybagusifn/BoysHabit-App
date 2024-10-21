@@ -1,9 +1,9 @@
 <x-layout>
 
     <div class="content container-fluid">
-        <div class="contentWrapper">
+        <div class="contentWrapper pt-3 mt-3">
             <div class="productView pt-5 pb-5">
-                    <div class="inputView">
+                    <div class="inputView mb-5">
                         <div class="imageGroup">
                             <div class="productImage w-100">
                                 <img src="/img/heroImage.jpg" class="img-fluid" style="width:100%" alt="...">
@@ -15,46 +15,49 @@
                             </div>
                         </div>
                         <div class="detailProduct ms-5 ps-5">
-                            <h2 class="fw-semibold">{{$details->name}}</h2>
-                            <div class="ratingDetail">
+                            <form action="/store-product/{{$details->id}}" method="POST">
+                                @csrf
+                                @foreach ($carts as $cart)
+                                <input type="hidden" name="cart_id" id="cartId" value="{{$cart->id}}">
+                                @endforeach
+                                <input type="hidden" name="product_id" id="productId" value="{{$details->id}}">
+                                <h2 class="fw-semibold">{{$details->name}}</h2>
+                                <div class="ratingDetail">
 
-                                @for ($i = 0; $i < $details->items->first()->rating; $i++)
-                                <i class="fa-solid fa-star mb-3"></i>
-                                @endfor
-                            </div>
-                            <p class="fw-medium">IDR {{number_format($details->items->first()->price, 2, ',', '.')}}</p>
-                            <p class="text-secondary">SKU: {{$details->items->first()->SKU}}</p>
-                            <p>Size: </p>
-                            <div class="btn-group w-50" role="group" aria-label="Basic radio toggle button group">
-                                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-                                <label class="btn btn-outline-dark rounded-0" for="btnradio1">S</label>
-
-                                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-                                <label class="btn btn-outline-dark rounded-0" for="btnradio2">M</label>
-
-                                <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-                                <label class="btn btn-outline-dark rounded-0" for="btnradio3">L</label>
-
-                                <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
-                                <label class="btn btn-outline-dark rounded-0" for="btnradio4">XL</label>
-
-                                <input type="radio" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off">
-                                <label class="btn btn-outline-dark rounded-0" for="btnradio5">XXL</label>
-                            </div>
-                            <div class="quantity mt-3">
-                                <label for="quantity">Quaantity:</label>
-                                <input type="number" class="form-control rounded-0 ms-2" value="1" min="1" max="10" step="1" style="border: 1px solid rgba(90, 90, 90, .5); background:#f4f4f6; width:80px">
-                            </div>
-                            <div class="subtotal mt-5">
-                                <P>Subtotal:</P>
-                                <p class="ms-1 fw-medium">IDR 100.000</p>
-                            </div>
-                            <div class="cartSubmit">
-                                <a href="#" class="addCartDetail card-link btn btn-dark rounded-0 w-75 fw-medium text-center" style="background-color: #1c1c1c">Add to Cart</a>
-                                <button id="buttonFav"  class="favButton btn  border-dark rounded-0 ms-2">
-                                    <i class="fa-regular fa-heart" id="favIcon"></i>
-                                </button>
-                            </div>
+                                    @for ($i = 0; $i < $details->items->first()->rating; $i++)
+                                    <i class="fa-solid fa-star mb-3" style="color:#FFD438"></i>
+                                    @endfor
+                                </div>
+                                <p class="fw-medium">IDR {{number_format($details->items->first()->price, 2, ',', '.')}}</p>
+                                {{-- <input type="hidden" name="price" id="productPrice" value="{{$details->items->first()->price}}"> --}}
+                                <p class="text-secondary">SKU: {{$details->items->first()->SKU}}</p>
+                                {{-- <input type="hidden" name="SKU" id="productSKU" value="{{$details->items->first()->SKU}}"> --}}
+                                <p>Size: </p>
+                                <div class="btn-group w-50" role="group" aria-label="Basic radio toggle button group">
+                                    @foreach ($sizes as $size)
+                                    <input type="radio" class="btn-check" value="{{$size->id}}" name="size_id" id="{{$size->size_name}}" autocomplete="off" @if ($size->id == 2)
+                                    @checked(true)
+                                    @endif>
+                                    <label class="btn btn-outline-dark rounded-0" for="{{$size->size_name}}">{{$size->size_name}}</label>
+                                    @endforeach
+                                </div>
+                                <div class="quantity mt-3">
+                                    <label for="quantity">Quantity:</label>
+                                    <input type="number" id="quantityInput" name="quantity" class="form-control rounded-0 ms-2" value="1" min="1" max="10" step="1" style="border: 1px solid rgba(90, 90, 90, .5); background:#f4f4f6; width:80px">
+                                </div>
+                                <div class="subtotal mt-5">
+                                    <P>Subtotal:</P>
+                                    <p class="ms-1 fw-medium" id="subtotalAmount">Rp {{number_format($items->price, 2, ',', '.')}}</p>
+                                    <!-- Hidden input untuk subtotal -->
+                                    <input type="hidden" name="subtotal" id="subtotalInput" value="{{ $details->items->first()->price }}">
+                                </div>
+                                <div class="cartSubmit">
+                                    <input type="submit" class="addCartDetail card-link btn btn-dark rounded-0 w-75 fw-medium text-center" name="simpan" style="background-color: #1c1c1c" value="Add to Cart">
+                                    <button id="buttonFav"  class="favButton btn border-dark rounded-0 ms-2">
+                                        <i class="fa-regular fa-heart" id="favIcon"></i>
+                                    </button>
+                                </div>
+                            </form>
                             <div class="productDesc mt-5">
                                 <h5>Details</h5>
                                 <hr class="border border-dark border-2 opacity-100" style="width:100px">
@@ -64,15 +67,70 @@
                             </div>
                         </div>
                     </div>
-                    <div class="descReviewProduct mt-5 pt-3">
+
+
+                    <script>
+                        document.getElementById('quantityInput').addEventListener('input', function() {
+                            let quantity = parseInt(this.value);
+                            let price = {{ $details->items->first()->price }};
+                            let subtotal = quantity * price;
+
+                            // Format subtotal ke bentuk mata uang
+                            let formattedSubtotal = new Intl.NumberFormat('id-ID', {
+                                style: 'currency',
+                                currency: 'IDR'
+                            }).format(subtotal);
+
+                            document.getElementById('subtotalAmount').innerText = formattedSubtotal;
+
+                            // Simpan subtotal ke dalam hidden input
+                            document.getElementById('subtotalInput').value = subtotal;
+                        });
+                    </script>
+
+
+
+
+
+                    <div class="descReviewProduct mt-5 pt-5">
                         <div class="productComment">
-                            <h5 class="text-secondary">Comment</h5>
+                            <h5 class="text-secondary">Reviews
+                            </h5>
                         </div>
-                        <div class="comentSection"></div>
-                    </div>
-                    <hr>
-
-
+                        <hr>
+                        @foreach ($reviews as $data)
+                        @if ($data->product_id == $details->id)
+                            <div class="reviewBox">
+                                <div class="reviewSection container-fluid">
+                                    <div class="reviewUser w-100">
+                                        <img class="rounded-circle img-fluid" src="/img/heroImage.jpg" style="width: 40px; height:40px" alt="">
+                                        <p class="p-0 m-0 ms-2 fw-medium">{{$data->users->name}}</p>
+                                        <p class="p-0 m-0 ms-3 ms-auto">
+                                            <i class="fa-solid fa-star" style="color:#FFD438"></i>
+                                            {{number_format($data->rating, 1, '.', ',')}}
+                                        </p>
+                                        <p class="p-0 m-0 ms-3 fw-light text-secondary ml-auto">{{$data->updated_at->diffForHumans()}}</p>
+                                    </div>
+                                    <div class="reviewText mt-4 w-75">
+                                        <p>{{$data->review}}</p>
+                                    </div>
+                                    <div class="likeDislike d-flex justify-content-end pt-0 mt-0">
+                                        <p class="p -0 m-0 text-secondary">Was this review helpful?</p>
+                                        <button class="btn pt-0 mt-0">
+                                            <i class="fa-regular fa-thumbs-up fa-lg"></i>
+                                        </button>
+                                        <p class="m-0 p-0 text-secondary fw-light">0</p>
+                                        <button class="btn pt-0 mt-0">
+                                            <i class="fa-regular fa-thumbs-down fa-flip-horizontal fa-lg"></i>
+                                        </button>
+                                        <p class="m-0 p-0 text-secondary fw-light">0</p>
+                                    </div>
+                                </div>
+                                <hr>
+                            </div>
+                        </div>
+                        @endif
+                        @endforeach
 
                     <div class="recomendedProduct mt-5">
                         <h3 class="text-center mb-5">Recomended Product</h3>
@@ -86,7 +144,7 @@
                                                     <div class="card-body ms-4">
                                                         <h5 class="card-title fw-semibold">{{ $data->name }}</h5>
                                                         <div class="rating">
-                                                                <i class="fa-solid fa-star"></i>
+                                                                <i class="fa-solid fa-star" style="color:#FFD438"></i>
                                                                 {{number_format($item['rating'], 1, ',', '.')}}
                                                         </div>
                                                     </div>

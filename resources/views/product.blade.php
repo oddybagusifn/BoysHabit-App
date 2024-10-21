@@ -1,6 +1,6 @@
 <x-layout>
-    <div class="product">
-        <div class="card-group row row-cols-1 row-cols-md-4 g-4 gap-0 m-0 p-0 gap-4">
+    <div class="product ms-5 me-5 ps-5 pe-5">
+        <div class="card-group row row-cols-1 row-cols-md-4 g-4 gap-0 m-0 p-0 ">
             @foreach ($products as $data)
             @foreach ($data->items as $item)
             <div class="col">
@@ -10,7 +10,7 @@
                         <div class="card-body ms-4">
                             <h5 class="card-title fw-semibold">{{ $data->name }}</h5>
                             <div class="rating">
-                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star" style="color:#FFD438"></i>
                                     {{number_format($item['rating'], 1, ',', '.')}}
                             </div>
                         </div>
