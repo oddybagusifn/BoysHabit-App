@@ -23,15 +23,13 @@
                                 <input type="hidden" name="product_id" id="productId" value="{{$details->id}}">
                                 <h2 class="fw-semibold">{{$details->name}}</h2>
                                 <div class="ratingDetail">
-
                                     @for ($i = 0; $i < $details->items->first()->rating; $i++)
                                     <i class="fa-solid fa-star mb-3" style="color:#FFD438"></i>
                                     @endfor
                                 </div>
                                 <p class="fw-medium">IDR {{number_format($details->items->first()->price, 2, ',', '.')}}</p>
-                                {{-- <input type="hidden" name="price" id="productPrice" value="{{$details->items->first()->price}}"> --}}
                                 <p class="text-secondary">SKU: {{$details->items->first()->SKU}}</p>
-                                {{-- <input type="hidden" name="SKU" id="productSKU" value="{{$details->items->first()->SKU}}"> --}}
+                                <p class="">Stock: {{$details->items->first()->qty_in_stock}}</p>
                                 <p>Size: </p>
                                 <div class="btn-group w-50" role="group" aria-label="Basic radio toggle button group">
                                     @foreach ($sizes as $size)
@@ -94,13 +92,28 @@
 
                     <div class="descReviewProduct mt-5 pt-5">
                         <div class="productComment">
-                            <h5 class="text-secondary">Reviews
-                            </h5>
+                            <h5 class="text-secondary">Reviews</h5>
                         </div>
-                        <hr>
+
+                            <div class="reviewInputField mt-3">
+                                <form action="/store-review/{{$details->id}}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="product_id" value="{{$details->id}}">
+                                    <input type="hidden" name="user_id" value="{{$reviews->first()->users->id}}">
+                                    <div class="reviewUser w-100">
+                                        <img class="rounded-circle img-fluid" src="/img/heroImage.jpg" style="width: 40px; height:40px" alt="">
+                                        <input class="inputReview w-100 border-bottom border-secondary border-1 opacity-75 bg-transparent ms-3 p-2 fs-6" type="text" name="review" width="100%" placeholder="Add review">
+                                    </div>
+                                    <div class="d-flex justify-content-end">
+                                        <button type="submit" class="btn border-dark rounded-0 mt-2 ps-5 pe-5" name="simpan" style="background-color: #1c1c1c; color:#f4f4f6;">Review</button>
+                                    </div>
+                                </form>
+                            </div>
+
                         @foreach ($reviews as $data)
                         @if ($data->product_id == $details->id)
-                            <div class="reviewBox">
+
+                            <div class="reviewBox mt-5">
                                 <div class="reviewSection container-fluid">
                                     <div class="reviewUser w-100">
                                         <img class="rounded-circle img-fluid" src="/img/heroImage.jpg" style="width: 40px; height:40px" alt="">

@@ -1,6 +1,13 @@
 <x-layout>
     <div class="mainCart ms-5 me-5 ps-5 pe-5">
         <div class="mainCartWrapper pt-5 pb-5">
+{{--
+            @session('deleted')
+                @if (@session)
+
+                @endif
+            @endsession --}}
+
             <h1 class="fw-bold">Shopping Cart</h1>
             <hr class="border border-dark border-1 opacity-25">
             @if ($carts->isEmpty() || $carts->every(fn($cart) => $cart->cartItems->isEmpty()))
@@ -47,31 +54,39 @@
                                         </div>
                                     @endforeach
                                     </div>
-                                    <div class="orderDetails card border ms-3 w-25">
-                                        <div class="orderDetailsWrapper pt-3 ms-3 me-3">
-                                            <h1 class="fw-semibold fs-4">Order Summary | 1 Item</h1>
-                                            <hr class="border border-dark border-1 opacity-25">
-                                            <div class="orderSummaryContent">
-                                                <div class="subtotalDetail ms-0">
-                                                    <p class="">Item Subtotal</p>
-                                                    <p class="ms-auto">IDR 100.000,00</p>
-                                                </div>
-                                                <div class="subtotalPPN">
-                                                    <div class="subtotalDetail ms-0 p-0 m-0">
-                                                        <p class="fw-bold p-0 m-0">SUBTOTAL</p>
-                                                        <p class="ms-auto p-0 m-0">IDR 100.000,00</p>
+                                    <div class="orderSection w-25 ms-4">
+                                        <div class="orderDetails card border mx-auto w-100">
+                                            <div class="orderDetailsWrapper pt-3 ms-3 me-3">
+                                                <h1 class="fw-semibold fs-4">Order Summary | {{$totalItems}} Item</h1>
+                                                <hr class="border border-dark border-1 opacity-25">
+                                                <div class="orderSummaryContent">
+                                                    <div class="subtotalDetail ms-0">
+                                                        <p class="">Item Subtotal</p>
+                                                        <p class="ms-auto">IDR {{number_format($subtotalItems, 2, ',', '.')}}</p>
                                                     </div>
-                                                    <div class="ppn pt-0 text-secondary">
-                                                        <p class="">VAT Include</p>
-                                                        <p class="ms-auto p-0 m-0">IDR 29.000,00</p>
+                                                    <div class="subtotalPPN">
+                                                        <div class="subtotalDetail ms-0 p-0 m-0">
+                                                            <p class="fw-bold p-0 m-0">SUBTOTAL</p>
+                                                            <p class="ms-auto p-0 m-0">IDR {{number_format($subtotalItems, 2, ',', '.')}}</p>
+                                                        </div>
+                                                        <div class="ppn pt-0 text-secondary">
+                                                            <p class="">VAT Include</p>
+                                                            <p class="ms-auto p-0 m-0">IDR {{number_format($totalPPN, 2, ',', '.')}}</p>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <hr class="border border-dark border-1 opacity-25 mt-5">
-                                                <div class="orderTotal ms-0 mb-0 pb-0">
-                                                    <p class="fw-bold fs-5">ORDER TOTAL</p>
-                                                    <p class="ms-auto fw-bold">IDR 129.000,00</p>
+                                                    <hr class="border border-dark border-1 opacity-25 mt-5">
+                                                    <div class="orderTotal ms-0 mb-0 pb-0">
+                                                        <p class="fw-bold fs-5">ORDER TOTAL</p>
+                                                        <p class="ms-auto fw-bold">IDR {{number_format($totalOrder, 2, ',', '.')}}</p>
+                                                    </div>
                                                 </div>
                                             </div>
+                                        </div>
+                                        <div class="paymentButton mx-auto w-100 mt-4">
+                                            <form action="" method="post">
+                                                @csrf
+                                                <input type="submit" class="addCartDetail card-link btn btn-dark rounded-0 p-2 w-100 fw-medium text-center" name="simpan" style="background-color: #1c1c1c" value="Proceed to Payment">
+                                            </form>
                                         </div>
                                     </div>
                                 </div>

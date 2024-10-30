@@ -19,7 +19,7 @@ class CartItem extends Model
     ];
 
     public function carts(){
-        return $this->belongsTo(Cart::class);
+        return $this->belongsTo(Cart::class, 'cart_id');
     }
 
     public function products(){

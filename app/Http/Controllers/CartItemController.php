@@ -35,6 +35,9 @@ class CartItemController extends Controller
 
     public function destroy($id) {
         $cartItems = CartItem::findOrFail($id);
+
+
+
         $cartItems->delete();
 
         return redirect()->back()->with('deleted', 'Product deleted from cart successfully!');
