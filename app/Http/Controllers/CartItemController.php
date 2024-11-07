@@ -18,8 +18,21 @@ class CartItemController extends Controller
         $products = Product::find($id);
         $products->load('items');
 
+        // Periksa apakah produk dengan ID dan ukuran yang sama sudah ada di keranjang
+        $existingCartItem = CartItem::where('cart_id', $request->input('cart_id'))
+        ->where('product_id', $request->id)
+        ->where('size_id', $request->input('size_id'))
+        ->first();
+
         // dd($request->except(['_token', 'simpan']));
 
+       if($existingCartItem){
+
+        $existingCartItem->quantity += $request->input('quantity');
+        $existingCartItem->subtotal += $request->input('subtotal');
+        $existingCartItem->save();
+
+       } else {
         CartItem::create([
             'cart_id' => $request->input('cart_id'),
             'cart_id' => $request->input('cart_id'),
@@ -28,6 +41,7 @@ class CartItemController extends Controller
             'quantity'=> $request->input('quantity'),
             'subtotal' => $request->input('subtotal')
         ]);
+       }
 
             return redirect()->route('detail_product', ['id' => $id])->with('success', 'Product added to cart successfully!');
 

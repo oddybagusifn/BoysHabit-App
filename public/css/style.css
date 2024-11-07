@@ -9,11 +9,12 @@ html, body{
     position: relative;
     height: 100%;
     margin: 0;
-    background: #f4f4f6;
+    background: #fafafa;
 }
 
 .navbar{
    background-color:#1c1c1c;
+   box-shadow: 0 0 20px rgba(0, 0, 0, .15);
 }
 
 .dropdown-menu{
@@ -54,12 +55,7 @@ html, body{
 }
 
 
-.carousel-item .heroText{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
+
 
 
 .slideContent{
@@ -69,6 +65,12 @@ html, body{
     align-items: center;
     flex-direction: column;
     text-align: center;
+}
+
+.heroText{
+    margin: 0;
+    padding: 0;
+    position: absolute;
 }
 
 .heroText .brandName{
@@ -350,8 +352,14 @@ html, body{
     flex-direction: column;
 }
 
+.cart-footer{
+    /* box-shadow: 0 0 0px rgba(0, 0, 0, .6); */
+    /* border: solid red; */
+}
+
 #cartCard{
-    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+    /* box-shadow: 0 0 20px rgba(0, 0, 0, .2); */
+    font-size: 13px;
 }
 
 .descReviewProduct{

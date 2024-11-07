@@ -6,8 +6,8 @@
                     <div class="carousel-inner">
                       <div class="carousel-item active">
                         <img src="img/heroImage.jpg" class="d-block w-100 img-fluid bg-black bg-gradient" alt="...">
-                            <div class="heroText card-img-overlay">
-                                <div class="slideContent d-flex justify-content-center ">
+                            <div class="heroText h-75 card-img-overlay d-flex justify-content-center align-items-center">
+                                <div class="slideContent d-flex justify-content-center align-items-center">
                                     <h1 class="brandName fw-bold fst-italic">BOYSHABIT</h1>
                                     <h3 class="fw-semibold fst-italic" style="color: #f4f4f6;">Endless Style, Limitless Choices</h3>
                                 </div>
@@ -17,7 +17,6 @@
                         <div class="carousel-item">
                             <img src="img/kaws.jpg" class="d-block w-100 img-fluid" alt="...">
                             <div class="slide card-img-overlay">
-                                <img src="img/kawsLogo.jpg" style="width:200px;" alt="">
                                 <div class="slideText2">
                                     <h3 class="fw-bold" style="color: #f4f4f6">KAWS Edition</h3>
                                     <p style="color: #f4f4f6">Celebrating the Premiere of Kaws 2024</p>
@@ -139,7 +138,7 @@
                                     <div class="col">
                                         <div class="card rounded-0">
                                           <img src="img/heroImage.jpg" class="card-img-top rounded-0" alt="...">
-                                          <div class="card-body">
+                                          <div class="card-body text-center">
                                             <h5 class="card-title">{{$category['category_name']}}</h5>
                                             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                           </div>

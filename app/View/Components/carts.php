@@ -37,6 +37,6 @@ class carts extends Component
         $subtotalItems = $cartItems->sum('subtotal');
         // dd($cartItems);
 
-        return view('components.carts', compact('cartItems', 'products', 'productItems', 'subtotalItems', ));
+        return view('components.carts', compact('cartItems', 'products', 'productItems', 'subtotalItems', 'totalItems'));
     }
 }

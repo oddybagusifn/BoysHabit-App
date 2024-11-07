@@ -1,7 +1,7 @@
 <x-layout>
 
     <div class="content container-fluid">
-        <div class="contentWrapper pt-3 mt-3">
+        <div class="contentWrapper pt-3">
             <div class="productView pt-5 pb-5">
                     <div class="inputView mb-5">
                         <div class="imageGroup">

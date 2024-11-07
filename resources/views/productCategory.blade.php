@@ -1,8 +1,8 @@
 <x-layout>
         @if ($products->isEmpty())
         <div class="isEmpty d-flex justify-content-center align-items-center flex-column w-100" style="height: 90vh;">
-            <i class="fa-solid fa-ban fa-2xl fs-1 mb-5" style="color: #7a7a7a;"></i>
-            <p class="text-secondary fw-medium fs-5">Product with this category is empty</p>
+            <i class="fa-solid fa-ban fa-2xl fs-1 mb-5" style="color: #2b2b2b;"></i>
+            <p class="text-dark fw-medium" style="font-size: 15px">Product with this category is empty</p>
         </div>
         @else
         <div class="product ms-5 me-5 p-5">
@@ -12,7 +12,7 @@
                 <div class="col">
                         <a class="aCard" href="/detail_product/{{$data->id}}">
                         <div class="card rounded-0 me-0 w-100">
-                            <img src="img/heroImage.jpg" class="card-img-top rounded-0" alt="...">
+                            <img src="/img/heroImage.jpg" class="card-img-top rounded-0" alt="...">
                             <div class="card-body ms-4">
                                 <h5 class="card-title fw-semibold">{{ $data->name }}</h5>
                                 <div class="rating">
