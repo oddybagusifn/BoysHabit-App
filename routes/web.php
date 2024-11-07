@@ -9,6 +9,7 @@ use App\Http\Controllers\CartItemController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ProductItemController;
 use App\Http\Controllers\ProductReviewController;
+use App\Http\Controllers\ProductCategoryController;
 use App\Models\Cart;
 use App\Models\ProductReview;
 
@@ -17,6 +18,8 @@ Route::get('/product', [ProductController::class, 'productView']);
 Route::get('/detail_product/{id}', [ProductController::class, 'detailProduct'])->name('detail_product');
 Route::post('/store-product/{id}', [CartItemController::class, 'productStore'])->middleware('auth');
 Route::post('/store-review/{id}', [ProductReviewController::class, 'reviewStore']);
+
+Route::get('/category/{id}', [ProductCategoryController::class, 'showProductByCategory']);
 
 Route::post('/cart_page', [CartController::class, 'addProductCart'])->name('cart.add');
 Route::get('/cart_page', [CartController::class, 'showCart'])->name('cart.show');

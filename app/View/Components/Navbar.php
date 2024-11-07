@@ -5,6 +5,8 @@ namespace App\View\Components;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
+use App\Models\ProductCategory;
+
 
 class Navbar extends Component
 {
@@ -21,6 +23,9 @@ class Navbar extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.navbar');
+        $categories = ProductCategory::all();
+        // dd($categories);
+
+        return view('components.navbar', compact('categories'));
     }
 }

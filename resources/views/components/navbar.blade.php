@@ -21,18 +21,13 @@
             <a class="nav-link {{ request()->is('best_seller') ? 'active' : '' }} fw-semibold" href="#">Best Seller</a>
           </li>
           <li class="nav-item dropdown pe-4">
-            <a class="nav-link dropdown-toggle fw-semibold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle fw-semibold" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Category
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Tops</a></li>
-              <li><a class="dropdown-item" href="#">Clothes</a></li>
-              <li><a class="dropdown-item" href="#">Shoes</a></li>
-              <li><a class="dropdown-item" href="#">Bags</a></li>
-              <li><a class="dropdown-item" href="#">Accessories</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Men</a></li>
-              <li><a class="dropdown-item" href="#">Women</a></li>
+                @foreach ($categories as $category)
+                    <li><a class="dropdown-item" href="/category/{{ $category->id }}">{{ $category->category_name }}</a></li>
+                @endforeach
             </ul>
           </li>
           <li class="nav-item pe-4">
@@ -47,9 +42,9 @@
             </li>
 
             <li class="nav-item pe-4">
-                <button class="nav-link btn" href="" id="cartButton">
+                <a class="nav-link btn" href="#" id="cartButton">
                     <i class="fa-solid fa-cart-shopping"  style="color:white"></i>
-                </button>
+                </a>
             </li>
 
             @auth

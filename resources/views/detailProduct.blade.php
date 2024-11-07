@@ -107,6 +107,8 @@
                                     <div class="d-flex justify-content-end">
                                         <button type="submit" class="btn border-dark rounded-0 mt-2 ps-5 pe-5" name="simpan" style="background-color: #1c1c1c; color:#f4f4f6;">Review</button>
                                     </div>
+                                    <div class="inputRating">
+                                    </div>
                                 </form>
                             </div>
 

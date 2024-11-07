@@ -308,24 +308,31 @@ html, body{
 }
 
 .overlay{
-    /* border: solid red; */
     position: fixed;
-    z-index: 1600;
-    left: 120rem;
-    width: 100%;
+    top: 0;
+    left: 0;
+    width: 100vw;
     height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4); /* Warna hitam transparan */
+    display: none; /* Tersembunyi secara default */
+    justify-content: flex-end; /* Menempatkan cartView di kanan */
+    align-items: flex-start;
+    z-index: 10000;
 }
 
 .cartView{
     /* border: solid red; */
-    position: fixed;
-    z-index: 2000;
+    width: 500px; /* Sesuaikan lebar cart */
     height: 100vh;
-    width: 100%;
-    background: #f4f4f6;
+    background-color: #f4f4f6;
+    transform: translateX(100%); /* Awalnya tersembunyi di luar layar */
+    transition: transform 0.3s ease; /* Transisi geser */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
-    left: 120rem;
+    position: fixed;
+    right: -100px;
+    z-index: 10000;
 }
 
 .cartHead{
@@ -340,9 +347,11 @@ html, body{
     /* border: solid red; */
     height: 100%;
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    align-items: center;
+}
+
+#cartCard{
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
 }
 
 .descReviewProduct{

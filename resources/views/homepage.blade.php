@@ -7,7 +7,7 @@
                       <div class="carousel-item active">
                         <img src="img/heroImage.jpg" class="d-block w-100 img-fluid bg-black bg-gradient" alt="...">
                             <div class="heroText card-img-overlay">
-                                <div class="slideContent">
+                                <div class="slideContent d-flex justify-content-center ">
                                     <h1 class="brandName fw-bold fst-italic">BOYSHABIT</h1>
                                     <h3 class="fw-semibold fst-italic" style="color: #f4f4f6;">Endless Style, Limitless Choices</h3>
                                 </div>
@@ -134,13 +134,13 @@
                     <div class="categoryDash mb-5 pb-5">
                         <div class="categoryItem mt-5 pt-5">
                             <div class="row row-cols-1 row-cols-md-3 g-4 gap-0 m-0 p-0">
-                                @foreach ($categories->take(6) as $data)
-                                <a href="">
+                                @foreach ($categories->take(6) as $category)
+                                <a href="/category/{{ $category->id }}">
                                     <div class="col">
                                         <div class="card rounded-0">
                                           <img src="img/heroImage.jpg" class="card-img-top rounded-0" alt="...">
                                           <div class="card-body">
-                                            <h5 class="card-title">{{$data['category_name']}}</h5>
+                                            <h5 class="card-title">{{$category['category_name']}}</h5>
                                             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                           </div>
                                         </div>

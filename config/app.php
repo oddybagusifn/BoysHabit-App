@@ -26,6 +26,15 @@ return [
     |
     */
 
+//     'providers' => [
+//     // Laravel Framework Service Providers...
+//     Illuminate\Auth\AuthServiceProvider::class,
+//     Illuminate\Broadcasting\BroadcastServiceProvider::class,
+//     // Tambahkan service provider kustom Anda di sini
+//     App\Providers\AppServiceProvider::class,
+// ],
+
+
     'env' => env('APP_ENV', 'production'),
 
     /*

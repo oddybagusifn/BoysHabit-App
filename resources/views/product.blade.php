@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="product ms-5 me-5 ps-5 pe-5">
+    <div class="product ms-5 me-5 p-5">
         <div class="card-group row row-cols-1 row-cols-md-4 g-4 gap-0 m-0 p-0 ">
             @foreach ($products as $data)
             @foreach ($data->items as $item)

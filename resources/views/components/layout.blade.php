@@ -8,7 +8,7 @@
         <div class="dash-wrapper">
 
             {{-- cart --}}
-            <x-cart></x-cart>
+            <x-carts></x-carts>
             {{-- cart end --}}
 
 
