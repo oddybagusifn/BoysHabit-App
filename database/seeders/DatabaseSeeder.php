@@ -70,7 +70,35 @@ class DatabaseSeeder extends Seeder
             'name' => 'Example4',
             'description' => 'Example',
             'product_image' => "https://cdn.discordapp.com/attachments/1021081740242079825/1280816233763176490/product1.jpg?ex=66d97492&is=66d82312&hm=e381f0f18d98f82ba8aa0e62d8f10de26fd9021466f66a0d366dd29f8eceef64&",
-            ]
+            ],
+            [
+                'slug' => 'example5',
+                'category_id' => 5,
+                'name' => 'Example5',
+                'description' => 'Example',
+                'product_image' => "https://cdn.discordapp.com/attachments/1021081740242079825/1280816233763176490/product1.jpg?ex=66d97492&is=66d82312&hm=e381f0f18d98f82ba8aa0e62d8f10de26fd9021466f66a0d366dd29f8eceef64&",
+                ],
+                [
+                'slug' => 'example_6',
+                'category_id' => 6,
+                'name' => 'Example6',
+                'description' => 'Example',
+                'product_image' => "https://cdn.discordapp.com/attachments/1021081740242079825/1280816233763176490/product1.jpg?ex=66d97492&is=66d82312&hm=e381f0f18d98f82ba8aa0e62d8f10de26fd9021466f66a0d366dd29f8eceef64&",
+                ],
+                [
+                'slug' => 'example_7',
+                'category_id' => 3,
+                'name' => 'Example7',
+                'description' => 'Example',
+                'product_image' => "https://cdn.discordapp.com/attachments/1021081740242079825/1280816233763176490/product1.jpg?ex=66d97492&is=66d82312&hm=e381f0f18d98f82ba8aa0e62d8f10de26fd9021466f66a0d366dd29f8eceef64&",
+                ],
+                [
+                'slug' => 'example_8',
+                'category_id' => 2,
+                'name' => 'Example8',
+                'description' => 'Example',
+                'product_image' => "https://cdn.discordapp.com/attachments/1021081740242079825/1280816233763176490/product1.jpg?ex=66d97492&is=66d82312&hm=e381f0f18d98f82ba8aa0e62d8f10de26fd9021466f66a0d366dd29f8eceef64&",
+                ]
         ]);
 
         DB::table('product_items')->insert([
@@ -96,6 +124,34 @@ class DatabaseSeeder extends Seeder
             'rating' => 5
             ],
             ['product_id' => 4,
+            'SKU' => "TSHIRT-BLK-LG",
+            'qty_in_stock' => 50,
+            'product_image' => "Example",
+            'price' => 100000,
+            'rating' => 5
+            ],
+            ['product_id' => 5,
+            'SKU' => "TSHIRT-BLK-LG",
+            'qty_in_stock' => 50,
+            'product_image' => "Example",
+            'price' => 100000,
+            'rating' => 5
+            ],
+            ['product_id' => 6,
+            'SKU' => "TSHIRT-BLK-LG",
+            'qty_in_stock' => 50,
+            'product_image' => "Example",
+            'price' => 100000,
+            'rating' => 5
+            ],
+            ['product_id' => 7,
+            'SKU' => "TSHIRT-BLK-LG",
+            'qty_in_stock' => 50,
+            'product_image' => "Example",
+            'price' => 100000,
+            'rating' => 5
+            ],
+            ['product_id' => 8,
             'SKU' => "TSHIRT-BLK-LG",
             'qty_in_stock' => 50,
             'product_image' => "Example",

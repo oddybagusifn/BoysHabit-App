@@ -81,9 +81,9 @@
                                                     </ul>
                                                     <br>
                                                     <div class="bottomCard list-group list-group-flush">
-                                                        <div class="card-body ms-auto me-4">
-                                                            <a href="/detail_product/{{$data->id}}" class="viewMore card-link link-offset-2 link-underline link-underline-opacity-0 text-dark  me-3">View More</a>
-                                                            <a href="#" class="addCart card-link btn btn-dark rounded-0 fw-medium">Add to Cart</a>
+                                                        <div class="card-body d-flex justify-content-between align-items-center">
+                                                            <a href="/detail_product/{{$data->id}}" class="ms-4 me-auto viewMore card-link link-offset-2 link-underline link-underline-opacity-0 text-dark  me-3">View More</a>
+                                                            <a href="#" class="addCart card-link btn btn-dark rounded-0 fw-medium me-4">Add to Cart</a>
                                                         </div>
                                                     </div>
                                                 </div>

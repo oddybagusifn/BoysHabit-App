@@ -1,11 +1,7 @@
 <x-layout>
-<<<<<<< Updated upstream
-    <div class="product ms-5 me-5 p-5">
-        <div class="card-group row row-cols-1 row-cols-md-4 g-4 gap-0 m-0 p-0 ">
-=======
-    <div class="product m-5 ps-5 pe-5">
-        <div class="card-group row row-cols-1 row-cols-md-4 d-flex justify-content-start g-4 gap-0 m-0 p-0 ">
->>>>>>> Stashed changes
+    <div class="product container-fluid">
+        <div class="card-group row row-cols-1 row-cols-md-4 d-flex justify-content-start g-4 gap-0 m-0 p-5">
+
             @foreach ($products as $data)
             @foreach ($data->items as $item)
             <div class="col">
@@ -26,9 +22,9 @@
                         </ul>
                         <br>
                         <div class="bottomCard list-group list-group-flush">
-                            <div class="card-body ms-auto me-4">
-                                <a href="/detail_product/{{$data->id}}" class="viewMore card-link link-offset-2 link-underline link-underline-opacity-0 text-dark  me-3">View More</a>
-                                <a href="#" class="addCart card-link btn btn-dark rounded-0 fw-medium">Add to Cart</a>
+                            <div class="card-body d-flex justify-content-evenly align-items-center border w-100">
+                                <a href="/detail_product/{{$data->id}}" class="p-0 ms-4 me-auto viewMore card-link link-offset-2 link-underline link-underline-opacity-0 text-dark">View More</a>
+                                <a href="#" class="addCart card-link btn btn-dark rounded-0 fw-medium me-4">Add to Cart</a>
                             </div>
                         </div>
                     </div>
