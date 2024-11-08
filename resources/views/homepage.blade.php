@@ -57,7 +57,7 @@
                     <div class="contentWrapper">
 
                     {{-- Best Seller --}}
-                    <div class="bestSellerDash">
+                    <div class="bestSellerDash" id="homepageBestSeller">
                         <div class="bestSellerWrapper pt-5 mt-5">
                             <div class="topProducts">
                                 <div class="card-group gap-4">

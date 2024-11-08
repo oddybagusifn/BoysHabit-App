@@ -480,6 +480,32 @@ html, body{
     flex-direction: column;
 }
 
+.profile {
+    display: inline-flex;
+    align-items: center;
+}
+
+.profile .nav-link {
+    display: inline-flex;
+    align-items: center;
+}
+
+.dropdown-menu {
+    top: 100%; /* Menempatkan dropdown tepat di bawah */
+}
+
+
+.profileImage{
+    /* border: solid red; */
+    background-color: rgb(68, 169, 21);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 
 

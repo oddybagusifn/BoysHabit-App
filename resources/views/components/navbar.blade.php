@@ -60,6 +60,7 @@
             </li>
 
             @auth
+<<<<<<< Updated upstream
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle d-flex flex-row align-items-center justify-content-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <div class="fw-semibold text-light p-2 d-flex justify-content-center align-items-center rounded-circle bg-dark" style="width: 30px; height:30px; max-width: 200px; aspect-ratio: 1 / 1;">
@@ -67,6 +68,15 @@
                     </div>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-lg-end" style="position: absolute; right: 0;" aria-labelledby="dropdownMenuButton">
+=======
+            <li class="profile nav-item dropdown d-inline-flex align-items-center">
+                <a class="nav-link dropdown-toggle fw-light text-white d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <div class="profileImage">
+                        {{ Str::upper(Str::substr(auth()->user()->name, 0, 1)) }}
+                    </div>
+                </a>
+                <ul class="dropdown-menu w-100">
+>>>>>>> Stashed changes
                     <li><a class="dropdown-item" href="/profile">Profile</a></li>
                     <li><hr class="dropdown-divider"></li>
                     <li>
@@ -82,7 +92,7 @@
 
             <li class="nav-item pe-4">
                 <a class="nav-link" href="/login">
-                    <i class="fa-solid fa-user"  style="color:white"></i>
+                    <i class="fa-solid fa-user text-dark"></i>
                 </a>
             </li>
 

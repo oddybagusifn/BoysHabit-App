@@ -1,6 +1,11 @@
 <x-layout>
+<<<<<<< Updated upstream
     <div class="product ms-5 me-5 p-5">
         <div class="card-group row row-cols-1 row-cols-md-4 g-4 gap-0 m-0 p-0 ">
+=======
+    <div class="product m-5 ps-5 pe-5">
+        <div class="card-group row row-cols-1 row-cols-md-4 d-flex justify-content-start g-4 gap-0 m-0 p-0 ">
+>>>>>>> Stashed changes
             @foreach ($products as $data)
             @foreach ($data->items as $item)
             <div class="col">
