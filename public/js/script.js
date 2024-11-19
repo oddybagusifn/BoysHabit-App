@@ -33,3 +33,5 @@ overlay.addEventListener('click', function(event) {
 
 // Event listener untuk menutup cart saat tombol close diklik
 closeCart.addEventListener('click', closeCartFunction);
+
+

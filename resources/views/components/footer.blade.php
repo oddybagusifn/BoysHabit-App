@@ -1,5 +1,5 @@
 <!-- Remove the container if you want to extend the Footer to full width. -->
-<div class="footer">
+<div class="footer position-relative start-0 bottom-0">
 
     <!-- Footer -->
     <footer

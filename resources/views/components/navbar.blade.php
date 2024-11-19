@@ -64,7 +64,7 @@
             <li class="nav-item">
                 <button type="button" class="nav-link btn position-relative m-0 p-0" href="#" id="cartButton">
                     <i class="fa-solid fa-cart-shopping"  style="color: #1c1c1c"></i>
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: .6rem">
                         {{ $totalProducts }}
                       <span class="visually-hidden">unread messages</span>
                     </span>

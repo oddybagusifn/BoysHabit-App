@@ -209,30 +209,39 @@ html, body{
 }
 
 .loginWrapper{
-    height: 95vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    height: 100vh;
 }
 
-.loginForm{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border: .5px solid #1c1c1c;
-    padding: 100px;
+
+
+#inputEmail{
+    border: none;
+    border-bottom: .5px solid black;
+    background-color: transparent;
 }
 
-#exampleInputEmail1{
-    background-color: #f4f4f6;
-    border: 1px solid rgba(100, 100, 100, .60);
+#inputEmail:focus{
+    box-shadow: none;
+    border-color: initial;
+    outline: none;
+    background: none;
 }
 
-#exampleInputPassword1{
-    background-color: #f4f4f6;
-    border: 1px solid rgba(100, 100, 100, .60);
+#inputPassword{
+    border: none;
+    border-bottom: .7px solid black;
+}
+
+#inputPassword:focus{
+    box-shadow: none;
+    border-color: initial;
+    outline: none;
+    background: none;
+}
+.show-password{
+    position: absolute;
+    right: 0;
+    padding-right: 2px;
 }
 
 .loginButton{
