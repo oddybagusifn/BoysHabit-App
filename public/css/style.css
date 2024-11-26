@@ -136,7 +136,7 @@ html, body{
 .topProducts{
     width: 60%;
 }
-
+    
 .card-body .addCart {
     background-color: #1c1c1c;
     color: #f4f4f6;
@@ -212,6 +212,19 @@ html, body{
     height: 100vh;
 }
 
+
+#inputName{
+    border: none;
+    border-bottom: .5px solid black;
+    background-color: transparent;
+}
+
+#inputName:focus{
+    box-shadow: none;
+    border-color: initial;
+    outline: none;
+    background: none;
+}
 
 
 #inputEmail{
@@ -514,6 +527,7 @@ html, body{
     justify-content: center;
     align-items: center;
 }
+
 
 
 

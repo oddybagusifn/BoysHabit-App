@@ -14,29 +14,23 @@
                 </a>
             </div>
 
-            @if (session()->has('success'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    {{ session('success')}}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            @endif
-            @if (session()->has('success'))
-                <div class="alert alert-succes alert-dismissible fade show" role="alert">
-                    {{session('success')}}
-                    <button type="button" class="btn-close" data-bs-dismiss='alert' aria-label="Close"></button>
-                </div>
-                @endif
-
-                @if (session()->has('loginError'))
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    {{session('loginError')}}
-                    <button type="button" class="btn-close" data-bs-dismiss='alert' aria-label="Close"></button>
-                </div>
-                @endif
-
-
             <div class="loginSection w-50 d-flex justify-content-center">
-                <div class="loginForm p-5 w-75">
+                <div class="loginForm p-5 w-75 d-flex flex-column">
+                    <div class="sessionBox w-100 d-flex justify-content-center">
+                        @if (session()->has('success'))
+                        <div class=" alert alert-success alert-dismissible fade show" role="alert">
+                            {{ session('success')}}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    @endif
+
+                        @if (session()->has('loginError'))
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            {{session('loginError')}}
+                            <button type="button" class="btn-close" data-bs-dismiss='alert' aria-label="Close"></button>
+                        </div>
+                        @endif
+                        </div>
                     <h2 class="fw-semibold">Sign In</h2>
                     <p class="text-secondary">Please enter your details</p>
                     <form action="/login" method="POST">

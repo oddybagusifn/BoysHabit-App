@@ -35,3 +35,42 @@ overlay.addEventListener('click', function(event) {
 closeCart.addEventListener('click', closeCartFunction);
 
 
+
+
+// Add To Cart
+
+let addCart = document.getElementById('addToCart')
+let addOverlay = document.getElementById('addOverlay');
+let overlayWrapper = document.getElementById('overlayWrapper');
+let productCard = document.getElementById('productBox');
+let closeAddCart = document.getElementById('closeAddCart');
+
+
+function addToCart(id){
+    addOverlay.style.display = 'block';
+    addOverlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeAdd(){
+    addOverlay.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+closeAddCart.addEventListener('click', function(){
+    closeAdd();
+})
+
+
+addOverlay.addEventListener('click', function(event) {
+    // Cek jika yang diklik adalah area overlay, bukan kontainer produk
+    if (event.target === overlayWrapper) {
+        closeAdd()
+    }
+});
+
+
+
+
+
+

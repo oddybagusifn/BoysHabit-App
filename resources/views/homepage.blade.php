@@ -1,4 +1,9 @@
     <x-layout>
+
+        @foreach ($products as $data)
+        <x-addToCart :id="$data->id"/>
+    @endforeach
+
         {{-- Hero Section --}}
         <div class="heroSection">
             <div class="carousel">
@@ -81,9 +86,19 @@
                                                     </ul>
                                                     <br>
                                                     <div class="bottomCard list-group list-group-flush">
-                                                        <div class="card-body d-flex justify-content-between align-items-center">
-                                                            <a href="/detail_product/{{$data->id}}" class="ms-4 me-auto viewMore card-link link-offset-2 link-underline link-underline-opacity-0 text-dark  me-3">View More</a>
-                                                            <a href="#" class="addCart card-link btn btn-dark rounded-0 fw-medium me-4">Add to Cart</a>
+                                                        <div class="card-body d-flex justify-content-evenly align-items-center border w-100">
+                                                            <a href="/detail_product/{{$data->id}}" class="p-0 ms-4 me-auto viewMore card-link link-offset-2 link-underline link-underline-opacity-0 text-dark">View More</a>
+                                                            <a href="#" class="addCart card-link btn btn-dark rounded-0 fw-medium me-4"
+                                                               data-bs-toggle="modal"
+                                                               data-bs-target="#addProductModal"
+                                                               data-id="{{ $data->id }}"
+                                                               data-name="{{ $data->name }}"
+                                                               data-price="{{ $item->price }}"
+                                                               data-stock="{{ $item->qty_in_stock }}"
+                                                               data-rating="{{ $item->rating }}"
+                                                               data-image="img/heroImage.jpg">
+                                                               Add to Cart
+                                                            </a>
                                                         </div>
                                                     </div>
                                                 </div>

@@ -23,7 +23,7 @@ class CartItemController extends Controller
         ->where('size_id', $request->input('size_id'))
         ->first();
 
-        // dd($request->except(['_token', 'simpan']));`
+        // dd($request->except(['_token', 'simpan']));
 
        if($existingCartItem){
 

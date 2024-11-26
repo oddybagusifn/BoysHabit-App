@@ -1,4 +1,4 @@
-<nav class="navbar navbar-light bg-light navbar-expand-lg sticky-top p-3">
+<nav class="navbar navbar-light bg-light navbar-expand-lg sticky-top w-100">
     <div class="container">
     <div class="logo">
         <a class="navbar-brand fw-bolder d-flex align-items-center justify-content-between" href="/">

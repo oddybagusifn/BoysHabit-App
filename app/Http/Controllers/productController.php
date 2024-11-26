@@ -23,7 +23,13 @@ class ProductController extends Controller
 
     public function productView(){
         $products = Product::all();
-        return view('product', compact('products'));
+        $reviews = ProductReview::with('users')->get();
+        $carts = Cart::with('cartItems')->get();
+        $cartItems = CartItem::with('products')->get();
+        $sizes = Size::all();
+
+        // dd($carts);
+        return view('product', compact('products', 'reviews', 'cartItems', 'sizes', 'carts'));
     }
 
     public function detailProduct($id){

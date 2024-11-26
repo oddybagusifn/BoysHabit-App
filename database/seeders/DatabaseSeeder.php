@@ -113,7 +113,7 @@ class DatabaseSeeder extends Seeder
             'SKU' => "TSHIRT-BLK-LG",
             'qty_in_stock' => 50,
             'product_image' => "Example",
-            'price' => 100000,
+            'price' => 200000,
             'rating' => 5
             ],
             ['product_id' => 3,
