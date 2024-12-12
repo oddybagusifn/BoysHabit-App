@@ -16,6 +16,7 @@ class CartController extends Controller
         return view('cartPage');
     }
     public function showCart(){
+        $userId = Auth::id();
         $carts = Cart::where('user_id', Auth::id())->with('cartItems.products', 'cartItems.sizes')->get();
         $products = Product::with('items')->get();
         $productItems = ProductItem::ALL();
@@ -27,9 +28,9 @@ class CartController extends Controller
 
         $totalPPN = 29000; // harus ada perhitungan PPN, ini baru menggunakan PPN palsu
         $totalOrder = $subtotalItems + $totalPPN;
-        // dd($totalOrder);
+        // dd($userId);
 
-        return view('cartPage', compact('carts', 'products', 'totalItems', 'subtotalItems','totalPPN', 'totalOrder'));
+        return view('cartPage', compact('userId', 'carts', 'products', 'totalItems', 'subtotalItems','totalPPN', 'totalOrder'));
     }
 
 

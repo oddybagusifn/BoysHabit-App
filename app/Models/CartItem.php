@@ -29,4 +29,8 @@ class CartItem extends Model
     public function sizes(){
         return $this->belongsTo(Size::class, 'size_id');
     }
+
+    public function transactionItem(){
+        return $this->hasMany(TransactionItem::class);
+    }
 }

@@ -10,6 +10,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ProductItemController;
 use App\Http\Controllers\ProductReviewController;
 use App\Http\Controllers\ProductCategoryController;
+use App\Http\Controllers\TransactionController;
 use App\Models\Cart;
 use App\Models\ProductReview;
 
@@ -34,6 +35,10 @@ Route::get('/register', [RegisterController::class, 'index'])->middleware('guest
 Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/profile', [ProfileController::class, 'index'])->middleware('auth');
+
+Route::post('/checkout', [TransactionController::class, 'checkout']);
+Route::get('/checkout/delivery', [TransactionController::class, 'checkoutDelivery']);
+Route::post('/orderStore', [TransactionController::class, 'orderStore']);
 
 
 
